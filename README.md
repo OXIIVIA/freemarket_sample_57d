@@ -20,7 +20,7 @@
 
 
 
-##card
+## card
 
 |card_number|integer|null: false, unique: true|
 |expire|integer|null: false|
