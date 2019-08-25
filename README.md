@@ -74,25 +74,20 @@
 |name|string|null: false|
 |postage|boolean|null: false|
 |price|integer|null: false|
+|condition|string|null: false|
+|size|string|null: false|
 |group_id|integer|null: false,foreign_key: true|
 |saler_id|integer|null: false,foreign_key: true|
 |buyer_id|integer|null: false,foreign_key: true|
 |brand_id|integer|null: false,foreign_key: true|
-|area_id|integer|null: false,foreign_key: true|
-|delivery_process_id|integer|null: false,foreign_key: true|
-|delivery_date_id|integer|null: false,foreign_key: true|
-|condition_id|integer|null: false,foreign_key: true|
-|size_id|integer|null: false,foreign_key: true|
+
 
 
 ### Association
 
+- has_one :delivery
 - has_many :favorites
 - has_many :categories, through: :item_categories
-- belongs_to :area
-- belongs_to :delivery_date
-- belongs_to :delivery_process
-- belongs_to :condition
 - belongs_to :group
 - belongs_to :brand
 - belongs_to :saler, class_name: "User"
@@ -100,51 +95,14 @@
 
 
 
-## areas
+## delivery
 
 |Column|Type|Options|
 |------|----|-------|
 |area|string|null: false|
-
-
-### Association
-
-- has_many :items
-
-
-
-## delivery_dates
-
-Column|Type|Options|
-|------|----|-------|
 |date|string|null: false|
-
-
-### Association
-
-belongs_to :item
-
-
-
-## delivery_processes
-
-Column|Type|Options|
-|------|----|-------|
 |process|string|null: false|
-
-
-### Association
-
-belongs_to :item
-
-
-
-## conditions
-
-Column|Type|Options|
-|------|----|-------|
-|condition|string|null: false|
-
+|item_id|integer|null: false,foreign_key: true|
 
 ### Association
 
@@ -162,7 +120,6 @@ belongs_to :item
 ### Association
 
 - has_many :items, through: :item_categories
-- has_many :sizes, through: :category_sizes
 
 
 
@@ -178,33 +135,6 @@ Column|Type|Options|
 
 belongs_to :item
 belongs_to :category
-
-
-## sizes
-
-Column|Type|Options|
-|------|----|-------|
-|size|string|null: false|
-
-
-### Association
-
-belongs_to :item
-
-
-
-## category_sizes
-
-Column|Type|Options|
-|------|----|-------|
-|category_id|integer|null: false,foreign_key: true|
-|size_id|integer|null: false,foreign_key: true|
-
-
-### Association
-
-belongs_to :category
-belongs_to :size
 
 
 
