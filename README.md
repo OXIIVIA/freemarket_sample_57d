@@ -22,6 +22,8 @@
 
 ## card
 
+|Column|Type|Options|
+|------|----|-------|
 |card_number|integer|null: false, unique: true|
 |expire|integer|null: false|
 |security_code|integer|null: false|
