@@ -1,0 +1,24 @@
+.default-container
+  %header
+    .head-container
+      .header__search
+        =image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512", size: "134x36")
+        .header__search__form
+          %input{value:"", placeholder:"何かお探しですか？", class: "input-default" }
+          %i.input-default-icon.fa.fa-search
+      .navibox
+        .navibox__left.left__float
+          %ul
+            %li.category
+              %h2
+              %i.fa.fa-list-ul
+              カテゴリー
+            %li.brand
+              %h2
+              %i.fa.fa-tags
+        .navibox__right.right__float
+          %ul.login__navi
+            %li
+              %span 新規会員登録
+            %li
+              %span  ログイン
