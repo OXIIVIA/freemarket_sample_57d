@@ -1,0 +1,51 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.default-container{
+  box-sizing:border-box	;
+  .head-container{
+    height:100px;
+    display:block;
+    font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+    font-weight: 500;
+    // position: relative;
+    // z-index: 1001;
+    background: #fff;
+    width:1020px;
+    margin:0 auto; 
+    padding:8px 0 0;
+
+    .header__search{
+      height:40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .header__search__form{
+        position: relative;
+        margin-left: 45px;
+        width: 100%;
+
+        .input-default{
+          background: #f5f5f5;
+          border-radius: 4px;
+          width: 100%;
+          height: 40px;
+        }
+        
+        .input-default-icon{
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transform: translateY(30%) translateX(15%);
+
+        }
+      }
+    }
+  }
+}
