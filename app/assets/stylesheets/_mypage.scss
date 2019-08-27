@@ -181,9 +181,196 @@
                   background-image:url("https://static.mercdn.net/images/mercari_profile.png") ;
                   background-size: contain;
                 }
+                &--body{
+                  margin: 0 40px 0 68px;
+                  &--text{
+                    overflow: hidden;
+                    max-height: 4.4em;
+                    text-overflow: ellipsis;
+                    line-height: 1.5;
+                    font-size:14px;
+
+                  }
+                  &--time{
+                    display: inline-block;
+                    color: #888;
+                    font-size:13px;
+
+                    i{
+                      margin: 0 8px 0 0;
+                      margin-right:5px;
+                      display: inline-block;
+                      font-style: normal;
+                      font-weight: 400;
+                      font-variant: normal;
+                      text-transform: none;
+                      line-height: 1;
+                    }
+                    span{
+                      vertical-align: middle;
+                    }
+                  }
+                }
+                .fa-chevron-right{
+                  position: absolute;
+                  right: 16px;
+                  transform: translate(0, -150%);
+                }                  
+              }
+            }
+            &__go{
+              border: 0;
+              position: relative;
+              padding: 16px;
+              &--list{
+                display: block;
+                height: 60px;
+                margin: 0 auto;
+                background: #eee;
+                color: #333;
+                line-height: 60px;
+                text-align: center;
+                text-decoration: none;
+                touch-action: manipulation;
               }
             }
           }
+        }
+        &__transaction{
+          padding: 40px 0 0;
+          background: #f5f5f5;
+          &--head{
+            background: #fafafa;
+            font-size: 16px;
+            line-height: 72px;
+            padding: 0 16px;
+            font-size: 100%;
+            font-weight: normal;
+            display: block;
+            margin-block-start: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+          }
+          &--tabs{
+            border: 0;
+            background: #eee;
+            list-style: none;
+            &__active{
+              background: #fff;
+              width: 50%;
+              text-align: center;
+              vertical-align: top;
+              float: left;
+              &__h3{
+                font-weight: bold;
+                font-size: 22px;
+                &__a{
+                  border-top: 2px solid #ea352d;
+                  position: relative;
+                  display: block;
+                  color: #333;
+                  font-size: 16px;
+                  line-height: 72px;
+                  text-decoration: none;
+                  touch-action: manipulation;
+                }
+              }
+            }
+            &__inactive{
+              width: 50%;
+              display: inline-block;
+              text-align: center;
+              vertical-align: top;
+              &__h3{
+                font-weight: bold;
+                font-size: 22px;
+                &__a{
+                  position: relative;
+                  display: block;
+                  color: #333;
+                  font-size: 16px;
+                  line-height: 72px;
+                  text-decoration: none;
+                  touch-action: manipulation;
+                }
+              }
+            }
+          }
+          &--lists{
+            background-color: white;
+            &__list{
+              &__notfound{
+                padding: 160px 0 60px;
+                background-image:url("https://www-mercari-jp.akamaized.net/assets/img/common/jp/logo_vertical.png?273499512");
+                background-repeat: no-repeat;
+                background-position: center 40px;
+                background-size: 200px 100px;
+                text-align: center;
+                font-size: 16px;
+                color: #ccc;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+    .lside{
+      float: left;
+      width: 280px;
+      margin: 0 40px 0 0;
+      .mynav{
+        &__ul{
+          list-style: none;
+          &__li{
+            border-top: 1px solid #eee;
+            &--item{
+              background: #eee;
+              font-weight: 600;
+              position: relative;
+              display: block;
+              padding: 16px;
+              font-size: 14px;
+              color: #333;
+              text-decoration: none;
+              touch-action: manipulation;
+              .fa-chevron-right{
+                color: #333;
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                transform: translate(0, -50%);
+                transition: all ease-out .2s;
+              }
+            }
+          }
+          &__li{
+            border-top: 1px solid #eee;
+            &--items{
+              position: relative;
+              display: block;
+              padding: 16px;
+              background: #fff;
+              font-size: 14px;
+              color: #333;
+              text-decoration: none;
+              touch-action: manipulation;
+              .fa-chevron-right{
+                color: #ccc;
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                transform: translate(0, -50%);
+                transition: all ease-out .2s;
+              }
+            }
+          }
+        }
+        &__head{
+          margin: 40px 0 0;
+          font-weight: bold;
+          font-size: 16px;
         }
       }
     }
