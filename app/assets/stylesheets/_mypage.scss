@@ -1,0 +1,191 @@
+.bread{
+  &__crumbs {
+    position: relative;
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    background: #fff;
+    height: 48px;
+    line-height: 3;
+    &__ul {
+      width: 1020px;
+      margin: 0 auto;
+      &__li {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.2;
+        text-align:left;
+        &__a {
+          color: #333;
+          text-decoration: none;
+          touch-action: manipulation;
+        }
+        .fa-chevron-right{
+          color: #ccc;
+        }
+      }
+    }
+  }
+}
+
+.contentswrapper{
+  background-color: #f5f5f5;
+  padding-top: 10px;
+  .l--container{
+    margin: 40px auto 0;
+    width: 1020px;
+    height: 1500px;
+    .l--content{
+      float: right;
+      width: 700px;
+      background-color:white;
+      &__mypageicon{
+        height: 200px;
+        position: relative;
+        padding: 20px;
+        background-image:url("https://d1f5hsy4d47upe.cloudfront.net/dc/dc0b71068dfdae6ebdbf74e55b1a9af9_t.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        &__a{
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translate(0, -50%);
+          color: #333;
+          text-decoration: none;
+          touch-action: manipulation;
+          &__figure{
+            overflow: hidden;
+            margin: 0 auto;
+            &__img{
+              border-radius: 50%;
+              width: 60px;
+              height: 60px;
+              vertical-align: middle;
+              background-image:url("https://pics.prcm.jp/99175265b11cf/80292020/png/80292020_220x208.png") ;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-size: contain;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: 1;
+              vertical-align: middle;
+            }
+          }
+          &__name{
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 8px 0 0;
+            font-size: 14px;
+          }
+          &__number{
+            &--review{
+              display: inline-block;
+              font-size: 14px;
+            }
+            &--reviewnumber{
+              font-weight: 600;
+              margin: 0 0 0 8px;
+              font-size: 16px;
+            }
+            &--listing{
+              display: inline-block;
+              font-size: 14px;
+              margin: 0 0 0 16px;
+            }
+            &--listingnumber{
+              font-weight: 600;
+              margin: 0 0 0 8px;
+              font-size: 16px;
+
+            }
+          }
+        }
+      }
+      &__tab{
+        padding: 0px;
+        margin: 0;
+        background: #fff;
+        &--tabs{
+          border: 0;
+          background: #eee;
+          list-style: none;
+          &__active{
+            background: #fff;
+            width: 50%;
+            text-align: center;
+            vertical-align: top;
+            float: left;
+            height:100%;
+            &__h3{
+              font-weight: bold;
+              font-size: 22px;
+              &__a{
+                border-top: 2px solid #ea352d;
+                position: relative;
+                display: block;
+                color: #333;
+                line-height: 72px;
+                font-size: 16px;
+                text-decoration: none;
+                touch-action: manipulation;
+              }
+            }
+          }
+          &__inactive{
+            width: 50%;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            &__h3{
+              font-weight: bold;
+              font-size: 22px;
+              &__a{
+                position: relative;
+                display: block;
+                color: #333;
+                font-size: 16px;
+                line-height: 72px;
+                text-decoration: none;
+                touch-action: manipulation;
+              }
+            }
+          }
+        }
+        .tab-content{
+          &__ul{
+            position: relative;
+            display: block;
+            &__li{
+              border-bottom: 1px solid #eee;
+              &__a{
+                display: block;
+                min-height: 0px;
+                padding: 16px;
+                color: #333;
+                text-decoration: none;
+                touch-action: manipulation;
+                &--figure{
+                  position: relative;
+                  overflow: hidden;
+                  float: left;
+                  width: 48px;
+                  height: 48px;
+                  margin:0;
+                  background-image:url("https://static.mercdn.net/images/mercari_profile.png") ;
+                  background-size: contain;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
