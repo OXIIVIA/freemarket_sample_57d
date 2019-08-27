@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
+  # 以下はダミーです
   get '/mypage' => 'users#mypage'
+  get '/sign_up' => 'users#resistration'
 end
