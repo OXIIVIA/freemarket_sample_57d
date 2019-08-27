@@ -236,6 +236,84 @@
             }
           }
         }
+        &__transaction{
+          padding: 40px 0 0;
+          background: #f5f5f5;
+          &--head{
+            background: #fafafa;
+            font-size: 16px;
+            line-height: 72px;
+            padding: 0 16px;
+            font-size: 100%;
+            font-weight: normal;
+            display: block;
+            margin-block-start: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+          }
+          &--tabs{
+            border: 0;
+            background: #eee;
+            list-style: none;
+            &__active{
+              background: #fff;
+              width: 50%;
+              text-align: center;
+              vertical-align: top;
+              float: left;
+              &__h3{
+                font-weight: bold;
+                font-size: 22px;
+                &__a{
+                  border-top: 2px solid #ea352d;
+                  position: relative;
+                  display: block;
+                  color: #333;
+                  font-size: 16px;
+                  line-height: 72px;
+                  text-decoration: none;
+                  touch-action: manipulation;
+                }
+              }
+            }
+            &__inactive{
+              width: 50%;
+              display: inline-block;
+              text-align: center;
+              vertical-align: top;
+              &__h3{
+                font-weight: bold;
+                font-size: 22px;
+                &__a{
+                  position: relative;
+                  display: block;
+                  color: #333;
+                  font-size: 16px;
+                  line-height: 72px;
+                  text-decoration: none;
+                  touch-action: manipulation;
+                }
+              }
+            }
+          }
+          &--lists{
+            background-color: white;
+            &__list{
+              &__notfound{
+                padding: 160px 0 60px;
+                background-image:url("https://www-mercari-jp.akamaized.net/assets/img/common/jp/logo_vertical.png?273499512");
+                background-repeat: no-repeat;
+                background-position: center 40px;
+                background-size: 200px 100px;
+                text-align: center;
+                font-size: 16px;
+                color: #ccc;
+                font-weight: 600;
+              }
+            }
+          }
+        }
       }
     }
   }
