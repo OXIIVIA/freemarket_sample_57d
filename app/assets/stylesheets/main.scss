@@ -6,7 +6,7 @@
 .image-box {
   width: 100%;
   height: 390px;
-  background-color: gray;
+  background-image: url(https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg);
 }
 
 .pickup-box {
@@ -104,5 +104,90 @@
         opacity: 0.7;
       }
     }
+  }
+}
+
+.banner {
+  width: 100vw;
+  background: url("https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?71240750");
+  background-position: center;
+  background-size: cover;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  .banner-inner {
+    position: relative;
+    overflow: hidden;
+    width: 750px;
+    height: 260px;
+    margin: 0 auto;
+    color: #fff;
+    &__content-box {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      &__text {
+        margin-bottom: 20px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        & h2 {
+          font-size: 24px;
+          font-weight: bold;
+          height: 1em
+        }
+        & p {
+          margin-top: 10px;
+          font-size: 35px;
+          eight: 1em
+        }
+      }
+      &__images {
+        display: flex;
+        &__link-box {
+          margin-left: 24px;
+          & a {
+            display: inline-block;
+            line-height: 68px;
+            &:last-child {
+              margin-left: 16px;
+            }
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+          & img {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    &__phone-image {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 300px;
+    }
+  }
+}
+
+.sell-btn {
+  position: fixed;
+  height: 160px;
+  width: 160px;
+  bottom: 32px;
+  right: 32px;
+  background-color: #ea352d;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  &__text {
+    margin-top: 32px;
+    font-size: 22px;
+    height: 1em;
+    line-height:22px;
+  }
+  .fa-camera {
+    margin-top: 8px;
+    font-size: 54px;
   }
 }
