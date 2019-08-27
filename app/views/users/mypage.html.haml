@@ -1,0 +1,37 @@
+.wrapper
+  = render partial:"shared/header"
+  = render partial:"shared/bread_crumbs"
+  .contentswrapper
+    %main.l--container
+      .l--content
+        .l--content__mypageicon
+          =link_to "#", class: "l--content__mypageicon__a" do
+            %figure.l--content__mypageicon__a__figure
+              %img.l--content__mypageicon__a__figure__img
+            %h2.l--content__mypageicon__a__name ユーザー名
+            .l--content__mypageicon__a__number
+              .l--content__mypageicon__a__number--review
+                評価数
+                %span.l--content__mypageicon__a__number--reviewnumber 100
+              .l--content__mypageicon__a__number--listing
+                出品数
+                %span.l--content__mypageicon__a__number--listingnumber
+                  100
+        %section.l--content__tab
+          %ul.l--content__tab--tabs
+            %li.l--content__tab--tabs__active
+              %h3.l--content__tab--tabs__active__h3
+                =link_to "#", class: "l--content__tab--tabs__active__h3__a" do
+                  お知らせ
+            %li.l--content__tab--tabs__inactive
+              %h3.l--content__tab--tabs__inactive__h3
+                =link_to "#", class: "l--content__tab--tabs__inactive__h3__a" do
+                  やることリスト
+          .tab-content
+            %ul.tab-content__ul
+              %li.tab-content__ul__li
+                =link_to "#", class: "tab-content__ul__li__a" do
+                  %figure.tab-content__ul__li__a--figure
+                    %img
+                  
+
