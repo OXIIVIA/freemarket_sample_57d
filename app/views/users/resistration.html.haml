@@ -32,4 +32,38 @@
             %span.registration-form__content__group__require
               必須
             .field-input
-            %input{value:"", placeholder:"例) メルカリ太郎", class: "input-default" }
+            %input{value:"", placeholder:"例) メルカリ太郎", class: "input-default" ,type:"text"}
+          .registration-form__content__group
+            %label{for: "email"}
+              メールアドレス
+            %span.registration-form__content__group__require
+              必須
+            .field-input
+            %input{value:"", placeholder:"PC・携帯どちらでも可", class: "input-default",type:"email" }
+          .registration-form__content__group
+            %label{for: "password"}
+              パスワード
+            %span.registration-form__content__group__require
+              必須
+            .field-input
+            %input{value:"", placeholder:"7文字以上", class: "input-default", type:"email" }
+          .registration-form__content__group
+            %label{for: "password"}
+              パスワード(確認)
+            %span.registration-form__content__group__require
+              必須
+            .field-input
+            %input{value:"", placeholder:"7文字以上", class: "input-default",type:"password" }
+          .registration-form__content__group
+            %h3.registration-form__content__group--sub 本人確認
+            %p.registration-form__content__group--text
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .registration-form__content__group
+            %label{for: "name"}
+              お名前(全角)
+            %span.registration-form__content__group__require
+              必須
+            .field-input__half
+            %input{value:"", placeholder:"7文字以上", class: "input-default__half",type:"password" }
+            .field-input__half
+            %input{value:"", placeholder:"7文字以上", class: "input-default__half",type:"password" }

@@ -31,9 +31,33 @@
         line-height: 1.5;
         font-size: 16px;
         padding-left: 16px;
+        &__half{
+          width: calc(50% - 8px);
+          float:left;
+          margin: 8px 8px 0 0;
+          height: 48px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          padding-left: 16px;
+        }
       }
-      
+      &--sub{
+        font-weight: 600;
+        font-size: 16px;
+      }
+      &--text{
+        margin: 8px 0 0;
+        padding: 0;
+        line-height:1.5;
+      }
     }
 
   }
+}
+.field-input__half{
+  display:flex;
+
 }
