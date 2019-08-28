@@ -9,5 +9,9 @@ class UsersController < ApplicationController
   # ダミーです
   def tell
   end
+    # ダミーです
+  def address
+  end
+
 
 end

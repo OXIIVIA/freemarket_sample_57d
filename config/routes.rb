@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get '/mypage' => 'users#mypage'
   get '/sign_up' => 'users#resistration'
   get '/sign_up/2' => 'users#tell'
+  get '/sign_up/3' => 'users#address'
+
 end
