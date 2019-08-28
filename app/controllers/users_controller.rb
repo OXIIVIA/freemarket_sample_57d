@@ -6,5 +6,8 @@ class UsersController < ApplicationController
   # レジストレーションはレジストレーションファイル確認のためのダミー
   def resistration
   end
+  # ダミーです
+  def tell
+  end
 
 end
