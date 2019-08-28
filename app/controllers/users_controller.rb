@@ -12,6 +12,9 @@ class UsersController < ApplicationController
     # ダミーです
   def address
   end
+    # ダミーです
+  def credit
+  end
 
 
 end

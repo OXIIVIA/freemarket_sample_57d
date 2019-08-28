@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/sign_up' => 'users#resistration'
   get '/sign_up/2' => 'users#tell'
   get '/sign_up/3' => 'users#address'
+  get '/sign_up/4' => 'users#credit'
 
 end
