@@ -24,3 +24,20 @@
     %section.smain__container
       %h2.smain__container__header 電話番号の確認
       %form.registration-form
+        %input{name: "", type: "hidden", value: ""}
+        .registration-form__content
+          .registration-form__content__group
+            %label{for: "nickname"}
+              ニックネーム
+            .field-input
+            %input{value:"", placeholder:"携帯電話の番号を入力", class: "input-default" ,type:"text"}
+            %p.registration-form__content__group--text
+              本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          .registration-form__content__textgroup
+            %a.btn-default.btn-default--red 次へ進む
+            %p.registration-form__content__group--text
+            ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .registration-form__content__textgroup
+            %p.registration-form__content__textgroup--textright
+              %a.registration-form__content__group--textcenter--blue{href: "/jp/tos_list/", target: "_blank"}>                   本人情報の登録について
+              %i.fas.fa-chevron-right
