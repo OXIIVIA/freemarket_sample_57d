@@ -15,6 +15,9 @@ class UsersController < ApplicationController
     # ダミーです
   def credit
   end
+    # ダミーです
+  def finish
+  end
 
 
 end
