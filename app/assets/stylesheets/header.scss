@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-=======
->>>>>>> dac12bb4a97271d15f4df9780c97fdc3d266b49a
 .default-container{
   box-sizing:border-box	;
 
@@ -12,12 +6,7 @@
     display:block;
     font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
     font-weight: 500;
-<<<<<<< HEAD
-    // position: relative;
-    // z-index: 1001;
-=======
->>>>>>> dac12bb4a97271d15f4df9780c97fdc3d266b49a
-    background: #fff;
+    background-color: #fff;
     width:1020px;
     margin:0 auto; 
     padding:8px 0 0;
@@ -40,14 +29,11 @@
           width: 100%;
           height: 40px;
           padding:0 15px;
-<<<<<<< HEAD
-=======
           border: 1px solid #ccc;
           &:focus {
             outline: 0;
             border: 1px solid #0099e8;
           }
->>>>>>> dac12bb4a97271d15f4df9780c97fdc3d266b49a
         }
         
         .input-default-icon{
@@ -116,15 +102,8 @@
           
           &__list{
             position: relative;
-<<<<<<< HEAD
-            // display:flex;
-            // align-items: center;
-            // justify-content: space-between;
             display:inline-block;
-            // vertical-align:middle;
-=======
-            display:inline-block;
->>>>>>> dac12bb4a97271d15f4df9780c97fdc3d266b49a
+
             cursor: pointer;
             list-style: none;
             font-size: 14px;
