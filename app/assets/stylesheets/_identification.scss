@@ -1,11 +1,17 @@
 .wrapper-id {
   box-sizing: border-box;
   background-color: #f5f5f5;
-  height: 1800px;
+  height: 1500px;
   width: 100vw;
   .id-container{
     margin:0 auto;
     width: 1020px;
+  }
+  .lside{
+    float: left;
+    width: 280px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 
@@ -128,7 +134,7 @@
           .select {
             position: relative;
             height: 48px;
-            width: 580px;
+            width: 565px;
             padding-left: 10px;
             background-color: #fff;
             border: solid 1px #d3d3d3;
