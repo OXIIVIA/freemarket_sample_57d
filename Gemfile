@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
 ruby '2.5.1'
 
@@ -41,6 +45,14 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'erb2haml'
   gem 'pry-rails'
+<<<<<<< HEAD
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+=======
+>>>>>>> dac12bb4a97271d15f4df9780c97fdc3d266b49a
 end
 
 group :development do
@@ -60,8 +72,19 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'font-awesome-rails'
+<<<<<<< HEAD
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
+gem 'devise'
+=======
 gem 'jquery-rails'
+>>>>>>> dac12bb4a97271d15f4df9780c97fdc3d266b49a
