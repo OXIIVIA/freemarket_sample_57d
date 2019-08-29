@@ -100,20 +100,16 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
-<<<<<<< HEAD
     devise (4.7.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-=======
->>>>>>> dac12bb4a97271d15f4df9780c97fdc3d266b49a
     erb2haml (0.1.5)
       html2haml
     erubi (1.8.0)
     erubis (2.7.0)
-<<<<<<< HEAD
     excon (0.66.0)
     execjs (2.7.0)
     ffi (1.11.1)
@@ -136,12 +132,6 @@ GEM
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
     formatador (0.2.5)
-=======
-    execjs (2.7.0)
-    ffi (1.11.1)
-    font-awesome-rails (4.7.0.5)
-      railties (>= 3.2, < 6.1)
->>>>>>> dac12bb4a97271d15f4df9780c97fdc3d266b49a
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.1.2)
