@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
-  def mypage
+
+  def index
   end
+
 end
