@@ -45,11 +45,14 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'erb2haml'
   gem 'pry-rails'
+<<<<<<< HEAD
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+=======
+>>>>>>> dac12bb4a97271d15f4df9780c97fdc3d266b49a
 end
 
 group :development do
@@ -77,7 +80,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'font-awesome-rails'
+<<<<<<< HEAD
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'devise'
+=======
+gem 'jquery-rails'
+>>>>>>> dac12bb4a97271d15f4df9780c97fdc3d266b49a
