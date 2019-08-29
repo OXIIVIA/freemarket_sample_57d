@@ -1,3 +1,6 @@
+.wrapper
+  = render partial:"shared/header"
+  = render partial:"shared/bread_crumbs"
 .wrapper-wallets
   .container
     .content-side-bar
@@ -20,3 +23,6 @@
             %a.card-index__regist__link
               %span.card-index__regist__link__text 支払い方法について
               %i.card-index__regist__link__icon.fas.fa-chevron-right
+    = render partial:"shared/side_bar"
+= render partial:"shared/ctabanner"
+= render partial:"shared/footer"

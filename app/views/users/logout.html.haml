@@ -1,3 +1,6 @@
+.wrapper
+  = render partial:"shared/header"
+  = render partial:"shared/bread_crumbs"
 .wrapper-logout
   .container
     .content-side-bar      
@@ -7,4 +10,6 @@
           .content__chapter__form__btn
             = link_to "",  class: 'content__chapter__form__btn__red' do
               %button.content__chapter__form__btn__red ログアウト
-            
+    = render partial:"shared/side_bar"
+= render partial:"shared/ctabanner"
+= render partial:"shared/footer"
