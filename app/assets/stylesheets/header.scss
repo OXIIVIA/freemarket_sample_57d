@@ -6,8 +6,6 @@
     display:block;
     font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
     font-weight: 500;
-    // position: relative;
-    // z-index: 1001;
     background: #fff;
     width:1020px;
     margin:0 auto; 
@@ -104,11 +102,7 @@
           
           &__list{
             position: relative;
-            // display:flex;
-            // align-items: center;
-            // justify-content: space-between;
             display:inline-block;
-            // vertical-align:middle;
             cursor: pointer;
             list-style: none;
             font-size: 14px;
