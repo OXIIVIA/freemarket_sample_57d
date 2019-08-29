@@ -3,4 +3,7 @@ class ItemsController < ApplicationController
     
   end
 
+  def sell
+  end
+
 end
