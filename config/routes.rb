@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   get '/sign_up/5' => 'users#finish'
   get '/mypage/2' => 'users#edit'
 
+  get '/signup' => 'users#signup'
+  get '/identification' => 'users#identification'
+  get '/cardselect' => 'users#cardselect'
+  get '/logout' => 'users#logout'
+  get '/login' => 'users#login'
 end
