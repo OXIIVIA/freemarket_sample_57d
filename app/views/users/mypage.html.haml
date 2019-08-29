@@ -33,5 +33,31 @@
                 =link_to "#", class: "tab-content__ul__li__a" do
                   %figure.tab-content__ul__li__a--figure
                     %img
-                  
-
+                  .tab-content__ul__li__a--body
+                    .tab-content__ul__li__a--body--text 明日、3%還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                    %time.tab-content__ul__li__a--body--time
+                      %i.fa.fa-history
+                      %span 1時間前
+                  %i.fa.fa-chevron-right
+              %li.tab-content__ul__go
+                =link_to "#", class: "tab-content__ul__go--list" do
+                  一覧を見る
+          %section.l--content__tab__transaction
+            %h2.l--content__tab__transaction--head 購入した商品
+            %ul.l--content__tab__transaction--tabs
+              %li.l--content__tab__transaction--tabs__active
+                %h3.l--content__tab__transaction--tabs__active__h3
+                  =link_to "#", class: "l--content__tab__transaction--tabs__active__h3__a" do
+                    取引中
+              %li.l--content__tab__transaction--tabs__inactive
+                %h3.l--content__tab__transaction--tabs__inactive__h3
+                  =link_to "#", class: "l--content__tab__transaction--tabs__inactive__h3__a" do
+                    過去の取引
+            .l--content__tab__transaction--lists
+              %ul.l--content__tab__transaction--lists__list
+                %li.l--content__tab__transaction--lists__list__notfound 取引中の商品がありません
+      .lside
+        = render partial:"shared/side_bar"
+  %aside.app-banner
+    -# = render partial:"shared/side-bar"
+  = render partial:"shared/footer"
