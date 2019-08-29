@@ -1,0 +1,82 @@
+.footer {
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  height: 391px;
+  padding: 0 20px 10px 20px;
+  background: #212121;
+
+  &__content {
+    .about-mercari {
+      width: 20%;
+      margin-right: 15px;
+    }
+
+    .help-guide {
+      width: 20%;
+      margin-right: 40px;
+    }
+
+    .privacy {
+      margin: 0 40px 0 0;
+      width: 35%;
+    }
+
+    .country {
+      width: 15%;
+    }
+
+    &__box {
+      width: 50%;
+      margin-top: 18px;
+      float: left;
+
+      h2 {
+        color: #ffffff;
+        height: 22px;
+        font-weight: bold;
+        margin-bottom: 24px;
+      }
+
+      li {
+        margin: 16px 0 0;
+        
+      }
+
+      a {
+        line-height: 1.5em;
+        text-decoration: none;
+        color: #b6b6b6;
+        font-size: 12px;
+        vertical-align: top;
+      }
+
+      &__social-link {
+        margin: 20px 0 0 0;
+        color: #ffffff;
+        font:30px FontAwesome;
+      }
+    }
+
+    width: 1020px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  &__lower {
+    position: relative;
+    margin: 30px auto 20px;
+    width: 1020px;
+    height: 33px;
+
+    .footer-copylight {
+      display: inline-block;
+      width: 745px;
+      text-align: center;
+      position: absolute;
+
+      small {
+        font-size: 11px;
+        color: #ffffff;
+      }
+    }
+  }
+}
