@@ -6,7 +6,12 @@
 .image-box {
   width: 100%;
   height: 390px;
-  background-image: url(https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg);
+  // background-image: url(https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg);
+  &__slide{
+    clear:both;
+    overflow: hidden;
+    position: relative;
+  }
 }
 
 .pickup-box {
