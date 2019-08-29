@@ -19,5 +19,9 @@ class UsersController < ApplicationController
   def finish
   end
 
+  def profile_editer
+  end
+  
+
 
 end

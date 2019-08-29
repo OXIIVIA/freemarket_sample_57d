@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/sign_up/3' => 'users#address'
   get '/sign_up/4' => 'users#credit'
   get '/sign_up/5' => 'users#finish'
+  get '/sign_up/6' => 'users#edit'
 
 end
