@@ -4,7 +4,7 @@
 .wrapper-id
   .id-container
     .lside
-
+      = render partial:"shared/side_bar"
     .box-id
       .header-id
         .header-id__title-user
@@ -139,6 +139,5 @@
           =link_to "#", class:"link-to-about" do
             本人情報の登録について
             %i.fa.fa-chevron-right
-    = render partial:"shared/side_bar"
 = render partial:"shared/ctabanner"
 = render partial:"shared/footer"
