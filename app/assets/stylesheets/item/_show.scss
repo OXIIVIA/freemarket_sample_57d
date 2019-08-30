@@ -151,9 +151,28 @@
     margin: 0 auto;
     text-align:center;
   &__bold{
-    margin: 24px  16px 10px 0;
+    margin: 24px  16px 15px 0;
     display: inline-block;
     font-size: 50px;
     font-weight: 550;
   }
+  &__shiipping{
+    font-size: 16px;
+  }
+  &__tax{
+    font-size:10px;
+  }
+}
+
+.buy-buttn{
+  width: 620px;
+  height: 56px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 600;
+  line-height: 56px;
+  font-size: 24px;
+  background-color: #ea352d;
+  color: #fff;
+  cursor:pointer;
 }
