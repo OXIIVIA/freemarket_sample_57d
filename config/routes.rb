@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get '/cardselect' => 'users#cardselect'
   get '/logout' => 'users#logout'
   get '/login' => 'users#login'
+  get '/item/show' => 'items#show'
 end
