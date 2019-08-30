@@ -24,23 +24,18 @@ class UsersController < ApplicationController
 
 
 
-  def 
-    signup
+  def signup
   end
 
-  def
-    identification
+  def identification
   end
 
-  def
-    cardselect    
+  def cardselect    
   end
 
-  def
-    logout
+  def logout
   end
 
-  def
-    login
+  def login
   end
 end
