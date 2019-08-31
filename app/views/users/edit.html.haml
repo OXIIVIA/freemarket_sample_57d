@@ -1,0 +1,19 @@
+.wrapper
+  = render partial:"shared/header"
+  = render partial:"shared/bread_crumbs"
+  .e-default
+    .e-contents
+      .e-contents__content
+        .e-contents__content__chapter
+          %h2.e-contents__content__chapter--head プロフィール
+          .setting-profile
+            %figure.setting-profile__field
+              = image_tag "https://pics.prcm.jp/99175265b11cf/80292020/png/80292020_220x208.png", class:"setting-profile__field--img"
+            %input{name: "nickname", placeholder: "例)ニックネーム", type: "text", value: "", class:"setting-profile__input-default"}
+          .profile-content
+            %textarea{class:"profile-content__textarea", name: "introduction", placeholder: "例)こんにちは。引っ越しに際して使わなくなったものなどを格安で出品致します。会社員ですので、平日は対応が遅くなることもございますがご了承ください。衣類に関しては基本的に自分でつかっていたものを出品いたします。何卒よろしくお願いいたします。"}
+            %button{class:"profile-content__btnred", type: "submit"} 変更する
+      = render partial:"shared/side_bar"
+  %aside.app-banner
+  = render partial:"shared/banner"
+  = render partial:"shared/footer"
