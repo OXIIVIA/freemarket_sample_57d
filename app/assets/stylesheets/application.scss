@@ -6,8 +6,11 @@
 @import "footer";
 @import "slick-theme"; 
 @import "slick";
+@import "_mypage";
+@import "user_signup/sidebar";
+@import "_cardselect";
+@import "_logout";
 @import "carousel";
-@import "mypage";
 @import "sidebar";
 @import "signup";
 @import "regi_footer";
@@ -16,4 +19,3 @@
 @import "user_signup/progress";
 @import "user_signup/form";
 @import "user_signup/mypage_edit";
-@import "user_signup/sidebar";
