@@ -1,7 +1,10 @@
-.single-wrapper
+-# .single-container
+.single-buy_container
   = render partial:"shared/single_header"
-  %main.single-main
-    %section.l-single-container__buy-item-container
-      %h2.l-single-head 
-        商品はすでに売り切れています    
+  %main.single-buy-main
+    %section.l-single-buy-container.buy-item-container
+      %h2.l-single-buy-head 商品は既に売り切れています
+    .buy-content.buy-error
+      .l-single-buy-content
+        %a{:href => "#"} 商品画面へ戻る
   = render partial:"shared/regi_footer"
