@@ -56,7 +56,8 @@
             .l--content__tab__transaction--lists
               %ul.l--content__tab__transaction--lists__list
                 %li.l--content__tab__transaction--lists__list__notfound 取引中の商品がありません
-      = render partial:"shared/side_bar"
-  %aside.app-banner
-    -# = render partial:"shared/side-bar"
+      .lside
+        = render partial:"shared/side_bar"
+  = render "shared/banner"
   = render partial:"shared/footer"
+  = render "shared/exhibit-btn" 
