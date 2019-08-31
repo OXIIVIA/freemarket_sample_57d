@@ -88,4 +88,14 @@
           %input{name: "comment", placeholder: "コメントを入力してください", type: "text", value: "", class:"item-comment-container__form__input"}
           .comment-buttn
             コメントする
-        
+  .item-nav
+    %ul
+      %li.item-nav__prev
+        = link_to "前の商品", ""
+      %li.item-nav__next
+        = link_to "次の商品", ""
+  = render partial: 'socialmedia'
+  .reccomend-item
+    お任せします！
+= render partial:"shared/ctabanner"
+= render partial:"shared/footer"
