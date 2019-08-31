@@ -10,10 +10,12 @@
 @import "user_signup/form";
 @import "user_signup/mypage_edit";
 @import "user_signup/sidebar";
-@import "_signup";
-@import "_identification";
-@import "_cardselect";
 @import "purchase";
+@import "signup";
+@import "_cardselect";
 @import "_logout";
-@import "_login";
-@import "_regi_footer";
+@import "login";
+@import "slick-theme"; 
+@import "slick";
+@import "carousel";
+@import "regi_footer";

@@ -1,0 +1,14 @@
+.banner
+  .banner-inner
+    .banner-inner__content-box
+      .banner-inner__content-box__text
+        %h2 スマホでかんたんフリマアプリ
+        %p 今すぐ無料ダウンロード！
+      .banner-inner__content-box__images
+        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?1763701673", width: 68
+        .banner-inner__content-box__images__link-box
+          = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+            = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?1763701673"
+          = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+            = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?1763701673"
+    = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?1763701673", class: "banner-inner__phone-image"

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # マイページアクションはマイページのファイルを出すためのダミーです
+# マイページアクションはマイページのファイルを出すためのダミーです
+
   def mypage
   end
 
@@ -21,30 +22,23 @@ class UsersController < ApplicationController
 
   def profile_editer
   end
+
+  def purchase
+  end
+
+  def signup
+  end
+
+  def identification
+  end
+
+  def cardselect    
+  end
+
+  def logout
+  end
+
+  def login
+  end
   
-
-
-  def 
-    signup
-  end
-
-  def
-    identification
-  end
-
-  def
-    cardselect    
-  end
-
-  def
-    logout
-  end
-
-  def
-    login
-  end
-
-  def
-    purchase
-  end
 end
