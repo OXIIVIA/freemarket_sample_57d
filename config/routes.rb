@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
+  resources :items, only: [:index, :show]
   # 以下はダミーです
   get '/mypage' => 'users#mypage'
   get '/sign_up' => 'users#resistration'
@@ -15,5 +16,4 @@ Rails.application.routes.draw do
   get '/cardselect' => 'users#cardselect'
   get '/logout' => 'users#logout'
   get '/login' => 'users#login'
-  get '/item/show' => 'items#show'
 end
