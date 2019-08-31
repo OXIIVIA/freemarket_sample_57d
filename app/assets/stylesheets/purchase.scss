@@ -1,0 +1,86 @@
+.single-buy_container {
+  margin: 0;
+  display: block;
+  position: relative;
+  height: 100%;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1;
+  background-color: whitesmoke;
+}
+
+.single-buy-main {
+  display: block;
+  background-repeat: no-repeat;
+  height: calc(100vh - 418px);
+  margin: 0;
+  padding: 0;
+  border-style: solid;
+  border-width: 0;
+  font-size: inherit;
+  line-height: inherit;
+  box-sizing: inherit; 
+}
+
+.l-single-buy-container.buy-item-container{
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 0;
+  border-style: solid;
+  border-width: 0;
+  font-size: inherit;
+  line-height: inherit;
+  box-sizing: inherit;
+  display: block;
+  .l-single-buy-head {
+    padding: 16px;
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    border-style: solid;
+    border-width: 0;
+    box-sizing: inherit;
+      & h2 {
+        display: block;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ','Meiryo', sans-serif; 
+        color: #333;
+        text-decoration: inherit;
+        vertical-align: inherit;
+        background-color: #b3d4fc;
+        color: #fff;
+        text-shadow: none;
+      }
+  }
+}
+.buy-content.buy-error {
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px 12.5% 40px;
+  border-style: solid;
+  border-width: 0;
+  font-size: inherit;
+  line-height: inherit;
+  box-sizing: inherit;
+  display: block;
+  border-top: 1px solid #f5f5f5;
+  .l-single-buy-content{
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    display: block;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    color: #333;              
+  }      
+}    
