@@ -1,0 +1,213 @@
+.wrapper
+  = render partial:"shared/header"
+.itemcontainer
+  .itemcontainer__box
+    .itemcontainer__box__content
+      .itemcontainer__box__content__detail
+        %h2.item-name
+          正規品 HUBLOT クラシックフュージョン クロノグラフ
+        %p.item-sumarry 『正規品 HUBLOT クラシックフュージョン クロノグラフ』は、11回の取引実績を持つTakeさんから出品されました。ウブロ（腕時計(アナログ)/メンズ）の商品で、京都府から1~2日で発送されます。
+        .itemmain
+          .itemmain__photo
+            .itemmain__photo--main
+              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_1.jpg?1566975788"
+            .itemmain__photo--main__clearfix
+              .itemmain__photo--sub
+                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_2.jpg?1566975788"
+                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_3.jpg?1566975788"
+                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_9.jpg?1567054871"
+                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_7.jpg?1567054871"
+                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_1.jpg?1566975788"
+          %table.item-profile
+            %tbody
+              %tr
+                %th
+                  出品者
+                %td
+              %tr
+                %th
+                  カテゴリー
+                %td
+                  時計
+              %tr
+                %th
+                  商品の状態
+                %td
+                  新品に近い
+              %tr
+                %th
+                  配送元地域
+                %td
+                  大阪
+              %tr
+                %th
+                  配送の目安
+                %td
+                  1日
+              %tr
+                %th
+                  公開範囲
+                %td
+          .item-price
+            %span.item-price__bold
+              ¥650,000
+            %span.item-price__tax
+              (税込)
+            %span.item-price__shipping
+              送料込み
+          .buy-buttn
+            購入画面に進む
+          .item-description
+            %p  
+              HUBLOT クラシックフュージョン チタニウム クロノグラフです 521.nx. 1171.lr 正規品
+              %br
+              少しだけ、傷がありますが、全然気にはならいないと思いますが 神経質な方はご遠慮ください。
+              %br
+              売れなければ自分で使用しようと思っています！
+              %br
+              偽物とのすり替え対策で返品はおこなってませんのでよろしくお願い申し上げます。
+          .item-reputation
+            .item-reputation__left
+              %button.item-reputation__left--like
+                = fa_icon "heart"
+                %span いいね！
+                %span 13
+            .item-reputation__center
+              .item-reputation__center--report
+                = fa_icon "flag", class:"flag_icon"
+                = link_to "不適切な商品の報告", "", class: "item-reputation__center--report--button"
+            .item-reputation__right
+              .item-reputation__right--safety
+                =fa_icon "unlock-alt"
+                = link_to "安心・安全への取り組み", "", class: "item-reputation__right--safety--span"
+      .item-comment-container
+        %ul.item-comment-container__list
+          = render partial: 'comment'
+        .item-comment-container__form
+          %span.item-comment-container__form__notice 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %input{name: "comment", placeholder: "コメントを入力してください", type: "text", value: "", class:"item-comment-container__form__input"}
+          .comment-buttn
+            コメントする
+  .item-nav
+    %ul
+      %li.item-nav__prev
+        = link_to "前の商品", ""
+      %li.item-nav__next
+        = link_to "次の商品", ""
+  = render partial: 'socialmedia'
+  .reccomend-item
+    = link_to "謎の出品者Aさんのその他の出品", root_path, class: "reccomend-item__title"
+    .items-container
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+    = link_to "HUBLOT その他の出品", root_path, class: "reccomend-item__title"
+    .items-container
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+      = link_to root_path, class: "item-box" do
+        = image_tag "https://image.jimcdn.com/app/cms/image/transf/dimension=466x1024:format=jpg/path/se4fbc1a2df4b7ca0/image/iba3c8e595038ed6f/version/1553047207/image.jpg", class: "item-box__link"
+        .item-box__text
+          %h3.item-box__text__name ここに商品名が入る!ここに商品名が入る！ここに商品名が入る！
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price ¥1,980
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+= render partial:"shared/gray_bread_crumbs"
+= render partial:"shared/ctabanner"
+= render partial:"shared/footer"
