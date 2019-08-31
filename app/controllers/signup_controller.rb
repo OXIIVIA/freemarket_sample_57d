@@ -3,7 +3,7 @@ class SignupController < ApplicationController
   def step1
     @user=User.new
   end
-
+  
   def step2
         # step1で入力された値をsessionに保存
         session[:nickname] = user_params[:nickname]
@@ -50,4 +50,3 @@ class SignupController < ApplicationController
     )
   end
 end
-
