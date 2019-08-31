@@ -13,4 +13,15 @@ Rails.application.routes.draw do
   get '/cardselect' => 'users#cardselect'
   get '/logout' => 'users#logout'
   get '/login' => 'users#login'
+
+  resources :signup do
+    collection do
+      get 'step1'
+      get 'step2'
+      get 'step3'
+      get 'step4'
+      get 'step5' 
+      get 'step6' 
+    end
+  end
 end
