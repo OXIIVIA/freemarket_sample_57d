@@ -6,6 +6,7 @@
       .itemcontainer__box__content__detail
         %h2.item-name
           正規品 HUBLOT クラシックフュージョン クロノグラフ
+        %p.item-sumarry 『正規品 HUBLOT クラシックフュージョン クロノグラフ』は、11回の取引実績を持つTakeさんから出品されました。ウブロ（腕時計(アナログ)/メンズ）の商品で、京都府から1~2日で発送されます。
         .itemmain
           .itemmain__photo
             .itemmain__photo--main
@@ -55,4 +56,36 @@
             %span.item-price__shipping
               送料込み
           .buy-buttn
-            購入画面に進む            
+            購入画面に進む
+          .item-description
+            %p  
+              HUBLOT クラシックフュージョン チタニウム クロノグラフです 521.nx. 1171.lr 正規品
+              %br
+              少しだけ、傷がありますが、全然気にはならいないと思いますが 神経質な方はご遠慮ください。
+              %br
+              売れなければ自分で使用しようと思っています！
+              %br
+              偽物とのすり替え対策で返品はおこなってませんのでよろしくお願い申し上げます。
+          .item-reputation
+            .item-reputation__left
+              %button.item-reputation__left--like
+                = fa_icon "heart"
+                %span いいね！
+                %span 13
+            .item-reputation__center
+              .item-reputation__center--report
+                = fa_icon "flag", class:"flag_icon"
+                = link_to "不適切な商品の報告", "", class: "item-reputation__center--report--button"
+            .item-reputation__right
+              .item-reputation__right--safety
+                =fa_icon "unlock-alt"
+                = link_to "安心・安全への取り組み", "", class: "item-reputation__right--safety--span"
+      .item-comment-container
+        %ul.item-comment-container__list
+          = render partial: 'comment'
+        .item-comment-container__form
+          %span.item-comment-container__form__notice 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %input{name: "comment", placeholder: "コメントを入力してください", type: "text", value: "", class:"item-comment-container__form__input"}
+          .comment-buttn
+            コメントする
+        
