@@ -65,18 +65,18 @@
               %span.registration-form__content__group__require
                 必須
               .field-input__half
-              = f.text_field :name, placeholder: '例) 山田', class: "input-default__half",type:"text"
+              = f.text_field :last_name, placeholder: '例) 山田', class: "input-default__half",type:"text"
               .field-input__half
-              = f.text_field :name, placeholder: '例) 彩', class: "input-default__half",type:"text"
+              = f.text_field :first_name, placeholder: '例) 彩', class: "input-default__half",type:"text"
             .registration-form__content__group
               %label{for: "name"}
                 お名前カナ(全角)
               %span.registration-form__content__group__require
                 必須
               .field-input__half
-              = f.text_field :name, placeholder: '例) ヤマダ', class: "input-default__half",type:"text"
+              = f.text_field :last_name_kana, placeholder: '例) ヤマダ', class: "input-default__half",type:"text"
               .field-input__half
-              = f.text_field :name, placeholder: '例) アヤ', class: "input-default__half",type:"text"
+              = f.text_field :first_name_kana, placeholder: '例) アヤ', class: "input-default__half",type:"text"
             .registration-form__content__group
               %label{for: "name"}
                 生年月日
@@ -84,7 +84,7 @@
                 必須
               .birthday
                 .birthday__select
-                  %select.birthday__select__default{name: "year"}
+                  %select.birthday__select__default{name: "birthdate_year"}
                     %option{value: ""} --
                     %option{value: "2019"} 2019
                     %option{value: "2018"} 2018
@@ -209,7 +209,7 @@
                   %i.fas.fa-angle-down
                 %span 年
                 .birthday__select.birthday__month
-                  %select.birthday__select__default{name: "month"}
+                  %select.birthday__select__default{name: "birthdate_month"}
                     %option{value: ""} --
                     %option{value: "1"} 1
                     %option{value: "2"} 2
@@ -226,7 +226,7 @@
                   %i.fas.fa-angle-down
                 %span 月
                 .birthday__select.birthday__day
-                  %select.birthday__select__default{name: "day"}
+                  %select.birthday__select__default{name: "birthdate_day"}
                     %option{value: ""} --
                   %i.fas.fa-angle-down
                 %span 日

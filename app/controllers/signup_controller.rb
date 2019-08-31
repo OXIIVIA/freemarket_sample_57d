@@ -14,6 +14,9 @@ class SignupController < ApplicationController
         session[:first_name] = user_params[:first_name]
         session[:last_name_kana] = user_params[:last_name_kana]
         session[:first_name_kana] = user_params[:first_name_kana]
+        session[:birthdate_year] = user_params[:birthdate_year]
+        session[:birthdate_month] = user_params[:birthdate_month]
+        session[:birthdate_day] = user_params[:birthdate_day]
         @user = User.new # 新規インスタンス作成
   end
 
@@ -41,13 +44,10 @@ class SignupController < ApplicationController
       :first_name, 
       :last_name_kana, 
       :first_name_kana, 
-      # :name あとで消す
-      :name
-      # :year
-      # :month
-      # :day
-
-  )
+      :birthdate_year,
+      :birthdate_month,
+      :birthdate_day,
+    )
   end
 end
 
