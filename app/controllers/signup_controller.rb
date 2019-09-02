@@ -38,6 +38,12 @@ class SignupController < ApplicationController
     @user = User.new # 新規インスタンス作成
   end
 
+  def step5
+    # session[:phonenumber] = user_params[:phonenumber]
+    # step2で入力された値をsessionに保存
+    @user = User.new # 新規インスタンス作成
+  end
+
 
   private
   def user_params
