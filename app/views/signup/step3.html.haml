@@ -23,8 +23,9 @@
   %main.smain
     %section.smain__container
       %h2.smain__container__header 発送元・お届け先住所入力
-      %form.registration-form
-        %input{name: "", type: "hidden", value: ""}
+      = form_for @address, url: step3_create_signup_index_path, method: :post,controler: "signup", action: "step3_create" do |f|
+        = f.hidden_field :prefecture_id,value: ""
+        = f.hidden_field :city,value: ""
         .registration-form__content
           .registration-form__content__group
             %label{for: "name"}
@@ -32,31 +33,31 @@
             %span.registration-form__content__group__require
               必須
             .field-input
-            %input{value:"", placeholder:"例) 山田", class: "input-default" ,type:"text"}
-            %input{value:"", placeholder:"例) アヤ", class: "input-default" ,type:"text"}
+            = f.text_field :address_last_name, placeholder: '例) 山田', class: "input-default",type:"text"
+            = f.text_field :address_first_name, placeholder: '例) 彩', class: "input-default",type:"text"
           .registration-form__content__group
             %label{for: "name"}
               お名前カナ(全角)
             %span.registration-form__content__group__require
               必須
             .field-input
-            %input{value:"", placeholder:"例) ヤマダ", class: "input-default" ,type:"text"}
-            %input{value:"", placeholder:"例) アヤ", class: "input-default",type:"text" }
+            = f.text_field :address_last_name_kana, placeholder: '例) ヤマダ', class: "input-default",type:"text"
+            = f.text_field :address_first_name_kana, placeholder: '例) アヤ', class: "input-default",type:"text"
           .registration-form__content__group
-            %label{for: "postnumber"}
+            %label{for: "address_number"}
               郵便番号
             %span.registration-form__content__group__require
               必須
             .field-input
-            %input{value:"", placeholder:"例) 123-4567", class: "input-default", type:"text" }
+            = fields.text_field :address_number, class:'input-default', placeholder:'例) 1234567',maxlength:'8'
           .registration-form__content__group
-            %label{for: "password"}
+            %label{for: "prefecture"}
               都道府県
             %span.registration-form__content__group__require
               必須
             .prefecture
               .prefecture__select
-                %select.prefecture__select__default{name: "prefecture"}
+                %select.prefecture__select__default{name: "address_prefecture"}
                   %option{value: ""} --
                   %option{value: "北海道"} 北海道
                   %option{value: "青森県"} 青森県
@@ -113,27 +114,28 @@
             %span.registration-form__content__group__require
               必須
             .field-input
-            %input{value:"", placeholder:"例) 横浜市緑区", class: "input-default", type:"text" }
+            = fields.text_field :address_city, class:'input-default', placeholder:'例)横浜市緑区'
           .registration-form__content__group
             %label{for: "postnumber"}
               番地
             %span.registration-form__content__group__require
               必須
             .field-input
-            %input{value:"", placeholder:"例) 青山1-1-1", class: "input-default", type:"text" }
+            = fields.text_field :address_block, class:'input-default', placeholder:'例)青山1-1-1'
           .registration-form__content__group
             %label{for: "postnumber"}
               建物名
             %span.registration-form__content__group__norequire
               任意
             .field-input
-            %input{value:"", placeholder:"例) 柳ビル103", class: "input-default", type:"text" }
+            = fields.text_field :address_building, class:'input-default', placeholder:'例)柳ビル103'
           .registration-form__content__group
             %label{for: "postnumber"}
               電話
             %span.registration-form__content__group__norequire
               任意
             .field-input
+            = fields.text_field :address_phone_number, class:'input-default', placeholder:'例)09012345678'
             %input{value:"", placeholder:"例) 09012345678", class: "input-default", type:"text" }
-              %a.btn-default.btn-default--red 次へ進む
+              =f.submit "次へ進む", class:"btn-default btn-default--red"
   = render partial:"shared/regi_footer"
