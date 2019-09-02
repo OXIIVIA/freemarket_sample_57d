@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'items#index'
+  resources :items, only: [:index, :show]
+  # 以下はダミーです
   get '/mypage' => 'users#mypage'
   get '/sign_up' => 'users#resistration'
   get '/sign_up/2' => 'users#tell'
@@ -13,7 +15,6 @@ Rails.application.routes.draw do
   get '/cardselect' => 'users#cardselect'
   get '/logout' => 'users#logout'
   get '/login' => 'users#login'
-
   resources :signup do
     collection do
       get 'step1'
@@ -25,4 +26,5 @@ Rails.application.routes.draw do
       get 'step6' 
     end
   end
+  get '/sell' => 'items#sell'
 end

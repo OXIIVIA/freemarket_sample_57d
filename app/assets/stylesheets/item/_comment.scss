@@ -1,0 +1,104 @@
+.item-comment-container{
+  border-top: solid 10px rgb(245, 245, 245);
+  display: block;
+  font-size: 14px;
+  
+  &__list{
+    display: block;
+    list-style-type: disc;
+    margin: 10px auto;
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    li{
+      display: block;
+      margin: 0 auto;
+      padding: 15px 0 15px 0;
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      .user-icon{
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        margin: 10px;
+        border-radius: 50%;
+        float: left;
+        img{
+          width: 32px;
+          height: 32px;
+          margin: 10px 4px 0;
+          vertical-align: bottom;
+        }
+        &:hover{
+          opacity:0.7;
+          cursor:pointer;
+        }
+      }
+      .user-name{
+        overflow: hidden;
+        float: left;
+        max-width: 100%;
+        min-width: 214px;
+        height: 1.2em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: bold;
+      }
+      .user-comment{
+        float: left;
+        position: relative;
+        width: 83%;
+        padding: 16px;
+        background: #eef0f4;
+        border-radius: 15px;
+        line-height: 1.5;
+        word-break: break-all;
+        &__time{
+          margin-top:8px;
+          color:gray;
+          &--flag{
+            float:right;
+          }
+        }
+      }
+    }
+  }
+  &__form{
+    width: 652px;
+    height: 224px;
+    margin: 20px auto;
+    &__notice{
+      background: #fff6de;
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+    &__input{
+      width: 652px;
+      margin: 0 auto 10px auto;
+      height: 104px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+}
+
+.comment-buttn{
+  margin-top:8px;
+  width: 100%;
+  height: 42px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 42px;
+  font-size: 14px;
+  background-color: #aaaaaa;
+  color: #fff;
+  cursor:pointer;
+}
