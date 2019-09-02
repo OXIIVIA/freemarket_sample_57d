@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'items#index'
+  resources :items, only: [:index, :show]
+  # 以下はダミーです
   get '/mypage' => 'users#mypage'
   get '/sign_up' => 'users#resistration'
   get '/sign_up/2' => 'users#tell'
@@ -13,10 +15,10 @@ Rails.application.routes.draw do
   get '/cardselect' => 'users#cardselect'
   get '/logout' => 'users#logout'
   get '/login' => 'users#login'
-
   resources :signup do
     collection do
       get 'step1'
+      post 'step1_create'
       get 'step2'
       get 'step3'
       get 'step4'
@@ -24,11 +26,5 @@ Rails.application.routes.draw do
       get 'step6' 
     end
   end
-
-   # cards
-   resources :cards, only: [:new, :show] do
-    collection do
-      post 'pay', to: 'cards#pay'
-    end
-  end
+  get '/sell' => 'items#sell'
 end
