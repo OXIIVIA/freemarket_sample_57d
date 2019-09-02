@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :signup do
     collection do
       get 'step1'
+      post 'step1_create'
       get 'step2'
       get 'step3'
       get 'step4'
