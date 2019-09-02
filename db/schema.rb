@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_31_111835) do
+ActiveRecord::Schema.define(version: 2019_09_01_112456) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -27,6 +27,25 @@ ActiveRecord::Schema.define(version: 2019_08_31_111835) do
     t.string "address_block", null: false
     t.string "address_building"
     t.integer "address_phone_number"
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
+  create_table "personals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "p_address_number"
+    t.integer "p_address_prefecture", default: 0
+    t.string "p_address_city"
+    t.string "p_address_block"
+    t.string "p_address_building"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -52,4 +71,5 @@ ActiveRecord::Schema.define(version: 2019_08_31_111835) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "users"
 end
