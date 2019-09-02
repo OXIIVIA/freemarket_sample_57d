@@ -108,6 +108,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erb2haml (0.1.5)
       html2haml
     erubi (1.8.0)
@@ -210,6 +214,10 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (5.0.0)
       omniauth-oauth2 (~> 1.2)
+    omniauth-google-oauth2 (0.8.0)
+      jwt (>= 2.0)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.6)
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
@@ -336,6 +344,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  dotenv-rails
   erb2haml
   fog-aws
   font-awesome-rails
@@ -347,6 +356,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   omniauth
   omniauth-facebook
+  omniauth-google-oauth2
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
