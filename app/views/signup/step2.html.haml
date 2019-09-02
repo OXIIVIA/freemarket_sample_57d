@@ -23,18 +23,17 @@
   %main.smain
     %section.smain__container
       %h2.smain__container__header 電話番号の確認
-      %form.registration-form
-        %input{name: "", type: "hidden", value: ""}
+      = form_for @user, url: step2_create_signup_index_path, method: :post,controler: "signup", action: "step2_create" do |f|
         .registration-form__content
           .registration-form__content__group
-            %label{for: "nickname"}
+            %label{for: "phone_number"}
               携帯電話の番号
             .field-input
-            %input{value:"", placeholder:"携帯電話の番号を入力", class: "input-default" ,type:"text"}
+            = f.text_field :phone_number, placeholder: '09012345678', class: "input-default" ,value: session[:phone_number]
             %p.registration-form__content__group--text
               本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
           .registration-form__content__textgroup
-            %a.btn-default.btn-default--red SMSを送信する
+            =f.submit "電話番号を登録する", class:  "btn-default btn-default--red"
             %p.registration-form__content__group--text
               ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
           .registration-form__content__textgroup
