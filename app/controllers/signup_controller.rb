@@ -56,7 +56,7 @@ class SignupController < ApplicationController
   def step4
     # session[:phonenumber] = user_params[:phonenumber]
     # step2で入力された値をsessionに保存
-    @ucard = Card.new # 新規インスタンス作成
+    @card = Card.new # 新規インスタンス作成
   end
 
 
