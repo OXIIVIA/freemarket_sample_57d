@@ -24,8 +24,8 @@
       get 'step3'
       post 'step3_create'
       get 'step4'
+      post 'step4_create'
       get 'step5'
-      get 'step6' 
     end
   end
   get '/sell' => 'items#sell'
