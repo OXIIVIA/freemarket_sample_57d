@@ -57,10 +57,39 @@ class SignupController < ApplicationController
     # session[:phonenumber] = user_params[:phonenumber]
     # step2で入力された値をsessionに保存
     @card = Card.new # 新規インスタンス作成
+    @user = User.new
+    @address = Address.new
   end
 
 
   def step4_create
+    @user=User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      last_name: session[:last_name],
+      first_name: session[:first_name],
+      last_name_kana: session[:last_name_kana],
+      first_name_kana: session[:first_name_kana],
+      birthdate_year: session[:birthdate_year],
+      birthdate_month: session[:birthdate_month],
+      birthdate_day: session[:birthdate_day]
+    )
+    # @address=Address.new(
+    #   session[:prefecture_id] = address_params[:prefecture_id]
+    #   session[:city] = address_params[:city]
+    #   session[:address_last_name] = address_params[:address_last_name]
+    #   session[:address_first_name] = address_params[:address_first_name]
+    #   session[:address_last_name_kana] = address_params[:address_last_name_kana]
+    #   session[:address_first_name_kana] = address_params[:address_first_name_kana]
+    #   session[:address_number] = address_params[:address_number]
+    #   session[:address_prefecture] = address_params[:address_prefecture]
+    #   session[:address_city] = address_params[:address_city]
+    #   session[:address_block] = address_params[:address_block]
+    #   session[:address_building] = address_params[:address_building]
+    #   session[:address_phone_number] = address_params[:address_phone_number]
+    # )
     # session[:prefecture_id] = address_params[:prefecture_id]
     # session[:city] = address_params[:city]
     # session[:address_last_name] = address_params[:address_last_name]
@@ -78,9 +107,9 @@ class SignupController < ApplicationController
 
 
   def step5
+
     # session[:phonenumber] = user_params[:phonenumber]
     # step2で入力された値をsessionに保存
-    @user = User.new # 新規インスタンス作成
   end
 
 
