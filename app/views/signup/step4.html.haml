@@ -23,7 +23,7 @@
   %main.smain
     %section.smain__container
       %h2.smain__container__header 支払い方法
-      = form_for @user, @address, url: step4_create_signup_index_path, method: :post,controler: "signup", action: "step4_create" do |f|
+      = form_for @card, url: step4_create_signup_index_path, method: :post,controler: "signup", action: "step4_create" do |f|
         %input{name: "", type: "hidden", value: ""}
         .registration-form__content
           .registration-form__content__cardgroup

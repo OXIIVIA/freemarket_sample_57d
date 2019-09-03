@@ -26,6 +26,8 @@
       .registration-form__content
         = form_for @user, url: step1_create_signup_index_path, method: :post,controler: "signup", action: "step1_create" do |f|
           = f.hidden_field :phone_number,value: ""
+          = f.hidden_field :image,value: ""
+          = f.hidden_field :profile,value: ""
           .registration-form__content__group
             %label{for: "nickname"}
               ニックネーム
