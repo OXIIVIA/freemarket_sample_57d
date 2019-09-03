@@ -52,7 +52,6 @@ class SignupController < ApplicationController
     session[:address_block] = address_params[:address_block],
     session[:address_building] = address_params[:address_building],
     session[:address_phone_number] = address_params[:address_phone_number]
-    @address.save
     binding.pry
     redirect_to step4_signup_index_path
   end
