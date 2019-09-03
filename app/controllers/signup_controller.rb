@@ -75,29 +75,44 @@ class SignupController < ApplicationController
       first_name: session[:first_name],
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
-      birthdate_year: session[:birthdate_year],
-      birthdate_month: session[:birthdate_month],
-      birthdate_day: session[:birthdate_day],
+      # birthdate_year: session[:birthdate_year],
+      birthdate_year: 1989,
+      # birthdate_month: session[:birthdate_month],
+      birthdate_month: 2,
+      # birthdate_day: session[:birthdate_day],
+      birthdate_day: 13,
       phone_number: session[:phone_number]
     )
-    @user.save
+    @user.save! 
     @address=Address.new(
-      prefecture_id: session[:prefecture_id],
-      city: session[:city],
+      # prefecture_id: session[:prefecture_id],
+      prefecture_id: 1,
+      # city: session[:city],
+      city: "",
       address_last_name: session[:address_last_name],
       address_first_name: session[:address_first_name],
       address_last_name_kana:session[:address_last_name_kana],
       address_first_name_kana: session[:address_first_name_kana],
       address_number: session[:address_number],
-      address_prefecture: session[:address_prefecture],
+      # address_prefecture: session[:address_prefecture],
+      address_prefecture: 1,
       address_city: session[:address_city],
       address_block: session[:address_block],
       address_building: session[:address_building],
       address_phone_number:session[:address_phone_number]
     )
-    @address.save
-    # if @user.save && @address.save
-    #   redirect_to
+    # binding.pry
+    @address.save!
+    redirect_to step5_signup_index_path
+    # if @user.save
+    #   　　　# ログインするための情報を保管
+    #         session[:id] = @user.id
+    #         redirect_to step5_signup_index_path
+    #       else
+    # redirect_to step1_signup_index_path
+    #       end
+
+
   end
 
 
