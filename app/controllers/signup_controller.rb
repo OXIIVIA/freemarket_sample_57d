@@ -5,6 +5,8 @@ class SignupController < ApplicationController
   end
 
   def step1_create
+    session[:image] = user_params[:image],
+    session[:profile] = user_params[:profile],
     session[:nickname] = user_params[:nickname],
     session[:email] = user_params[:email],
     session[:password] = user_params[:password],
@@ -62,6 +64,8 @@ class SignupController < ApplicationController
 
   def step4_create
     @user=User.new(
+      image: session[:image],
+      profile: session[:profile],
       nickname: session[:nickname],
       email: session[:email],
       password: session[:password],
@@ -75,6 +79,7 @@ class SignupController < ApplicationController
       birthdate_day: session[:birthdate_day],
       phone_number: session[:phone_number]
     )
+    @user.save
     @address=Address.new(
       prefecture_id: session[:prefecture_id],
       city: session[:city],
@@ -89,6 +94,7 @@ class SignupController < ApplicationController
       address_building: session[:address_building],
       address_phone_number:session[:address_phone_number]
     )
+    @address.save
     if @user.save
       　　　# ログインするための情報を保管
             session[:id] = @user.id
