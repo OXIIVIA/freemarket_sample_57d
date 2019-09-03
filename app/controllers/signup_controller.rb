@@ -52,6 +52,7 @@ class SignupController < ApplicationController
     session[:address_block] = address_params[:address_block],
     session[:address_building] = address_params[:address_building],
     session[:address_phone_number] = address_params[:address_phone_number]
+
     redirect_to step4_signup_index_path
   end
 
@@ -110,6 +111,7 @@ class SignupController < ApplicationController
     #       else
     # redirect_to step1_signup_index_path
     #       end
+
 
   end
 
