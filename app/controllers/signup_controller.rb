@@ -48,9 +48,10 @@ class SignupController < ApplicationController
     session[:address_prefecture] = address_params[:address_prefecture]
     session[:address_city] = address_params[:address_city]
     session[:address_block] = address_params[:address_block]
-    session[:address_building] = user_params[:address_building]
-    session[:address_phone_number] = user_params[:address_phone_number]    
-    redirect_to step3_signup_index_path
+    session[:address_building] = address_params[:address_building]
+    session[:address_phone_number] = address_params[:address_phone_number]
+    binding.pry
+    redirect_to step4_signup_index_path
   end
 
   def step4
