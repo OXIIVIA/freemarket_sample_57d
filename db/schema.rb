@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_050449) do
+ActiveRecord::Schema.define(version: 2019_09_03_081053) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_050449) do
     t.string "address_city", null: false
     t.string "address_block", null: false
     t.string "address_building"
-    t.integer "address_phone_number"
+    t.string "address_phone_number"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -48,14 +48,6 @@ ActiveRecord::Schema.define(version: 2019_09_02_050449) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "uid"
-    t.string "provider"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -67,8 +59,6 @@ ActiveRecord::Schema.define(version: 2019_09_02_050449) do
     t.string "image", null: false
     t.string "nickname", null: false
     t.text "profile"
-    t.string "provider"
-    t.string "uid"
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
@@ -76,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_050449) do
     t.integer "birthdate_year", null: false
     t.integer "birthdate_month", null: false
     t.integer "birthdate_day", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
