@@ -52,6 +52,8 @@ class SignupController < ApplicationController
     session[:address_block] = address_params[:address_block],
     session[:address_building] = address_params[:address_building],
     session[:address_phone_number] = address_params[:address_phone_number]
+    @address.save
+    binding.pry
     redirect_to step4_signup_index_path
   end
 
@@ -94,16 +96,9 @@ class SignupController < ApplicationController
       address_building: session[:address_building],
       address_phone_number:session[:address_phone_number]
     )
-
     @address.save
-    if @user.save
-      　　　# ログインするための情報を保管
-            session[:id] = @user.id
-            redirect_to step5_signup_index_path
-          else
-    redirect_to step1_signup_index_path
-          end
-
+    # if @user.save && @address.save
+    #   redirect_to
   end
 
 
