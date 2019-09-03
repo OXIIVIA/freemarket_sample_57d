@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   root 'items#index'
   resources :items, only: [:index, :show]
   # 以下はダミーです
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/identification' => 'users#identification'
   get '/cardselect' => 'users#cardselect'
   get '/logout' => 'users#logout'
-  get '/login' => 'users#login'
+  get '/l ogin' => 'users#login'
   resources :signup do
     collection do
       get 'step1'

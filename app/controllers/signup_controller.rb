@@ -2,7 +2,6 @@ class SignupController < ApplicationController
 
   def step1
     @user=User.new
-    # binding.pry
   end
 
   def step1_create
