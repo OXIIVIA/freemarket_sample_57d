@@ -60,8 +60,8 @@
               .prefecture__select
 
                 -# =f.select :address_prefecture, [["北海道", "北海道"], ["東京都", "東京都"]],{prompt: "---"}, class:"prefecture__select__default"
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "--",selected: session[:address_prefecture]["prefecture_id"]}, {class: "prefecture_id"}
-                -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'input'
+                -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "--",selected: session[:address_prefecture]["prefecture_id"]}, {class: "prefecture_id"}
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'input'
 
                 %i.fas.fa-angle-down
           .registration-form__content__group

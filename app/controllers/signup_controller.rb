@@ -76,11 +76,8 @@ class SignupController < ApplicationController
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
       birthdate_year: session[:birthdate_year],
-      
       birthdate_month: session[:birthdate_month],
-     
       birthdate_day: session[:birthdate_day],
-      
       phone_number: session[:phone_number]
     )
     @user.save! 
@@ -95,7 +92,6 @@ class SignupController < ApplicationController
       address_first_name_kana: session[:address_first_name_kana],
       address_number: session[:address_number],
       address_prefecture: session[:address_prefecture],
-      # address_prefecture: 1,
       address_city: session[:address_city],
       address_block: session[:address_block],
       address_building: session[:address_building],
