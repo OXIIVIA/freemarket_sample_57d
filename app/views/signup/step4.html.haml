@@ -23,7 +23,7 @@
   %main.smain
     %section.smain__container
       %h2.smain__container__header 支払い方法
-      %form.registration-form
+      = form_for @card, url: step4_create_signup_index_path, method: :post,controler: "signup", action: "step4_create" do |f|
         %input{name: "", type: "hidden", value: ""}
         .registration-form__content
           .registration-form__content__cardgroup
@@ -97,5 +97,5 @@
               %span.registration-form__content__creditgroup--textright--blue--question ?
               %a.registration-form__content__creditgroup--textright--blue{href: "/jp/tos_list/", target: "_blank"}>カード裏面の番号とは？
           .registration-form__content__creditgroup
-            %a.btn-default.btn-default--red 次へ進む
+            =f.submit "登録を完了する", class:"btn-default btn-default--red"
   = render partial:"shared/regi_footer"
