@@ -18,19 +18,21 @@
         Googleでログイン
 
     .login-form-inner
-      .form-group
-        %input.login-input-text.input-default{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/
-      .form-group
-        %input.login-input-text.input-default{name: "password", placeholder: "パスワード", type: "password"}/
-      .form-group
-        =image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx8VuXwJ4gPhLFG2-E0OHHmPTbuj8QHJFQ6rGm5pA7Kz17PvFM"
-        -# .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-        -#   %div{style: "width: 304px; height: 78px;"}
-        -#     %div
-        -#       %iframe{frameborder: "0", height: "78", name: "a-5xpuchn2843w", role: "presentation", sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", scrolling: "no", src: "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1559543665173&size=normal&cb=g7nqsn8kokmd", width: "304"}
-            -# %textarea#g-recaptcha-response.g-recaptcha-response{name: "g-recaptcha-response", style: "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
-      =link_to "", class: "login" do
-        ログイン
-      =link_to "", class: "password-forget" do
-        パスワードをお忘れの方
+      = form_for @user, url: session_path(@user) do |f|
+        .form-group
+          = f.email_field :email, placeholder: "メールアドレス", class: "login-input-text input-default"
+          -# %input.login-input-text.input-default{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/
+        .form-group
+          -# %input.login-input-text.input-default{name: "password", placeholder: "パスワード", type: "password"}/
+        .form-group
+          =image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx8VuXwJ4gPhLFG2-E0OHHmPTbuj8QHJFQ6rGm5pA7Kz17PvFM"
+          -# .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
+          -#   %div{style: "width: 304px; height: 78px;"}
+          -#     %div
+          -#       %iframe{frameborder: "0", height: "78", name: "a-5xpuchn2843w", role: "presentation", sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", scrolling: "no", src: "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1559543665173&size=normal&cb=g7nqsn8kokmd", width: "304"}
+              -# %textarea#g-recaptcha-response.g-recaptcha-response{name: "g-recaptcha-response", style: "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
+        =link_to "", class: "login" do
+          ログイン
+        =link_to "", class: "password-forget" do
+          パスワードをお忘れの方
   = render partial: "shared/regi_footer"
