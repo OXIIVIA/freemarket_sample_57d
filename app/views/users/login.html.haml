@@ -23,7 +23,8 @@
       .form-group
         %input.login-input-text.input-default{name: "password", placeholder: "パスワード", type: "password"}/
       .form-group
-        =image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx8VuXwJ4gPhLFG2-E0OHHmPTbuj8QHJFQ6rGm5pA7Kz17PvFM"
+        = recaptcha_tags
+        -# =image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx8VuXwJ4gPhLFG2-E0OHHmPTbuj8QHJFQ6rGm5pA7Kz17PvFM"
         -# .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
         -#   %div{style: "width: 304px; height: 78px;"}
         -#     %div
