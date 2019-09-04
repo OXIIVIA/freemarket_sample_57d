@@ -41,18 +41,17 @@ class SignupController < ApplicationController
 
   def step3_create
     session[:prefecture_id] = address_params[:prefecture_id],
-    session[:city] = address_params[:city],
     session[:address_last_name] = address_params[:address_last_name],
     session[:address_first_name] = address_params[:address_first_name],
     session[:address_last_name_kana] = address_params[:address_last_name_kana],
     session[:address_first_name_kana] = address_params[:address_first_name_kana],
     session[:address_number] = address_params[:address_number],
-    session[:address_prefecture] = address_params[:address_prefecture],
     session[:address_city] = address_params[:address_city],
     session[:address_block] = address_params[:address_block],
     session[:address_building] = address_params[:address_building],
     session[:address_phone_number] = address_params[:address_phone_number]
-
+    @address = Address.new(address_params)
+    binding.pry
     redirect_to step4_signup_index_path
   end
 
@@ -83,9 +82,6 @@ class SignupController < ApplicationController
     @user.save! 
     @address=Address.new(
       prefecture_id: session[:prefecture_id],
-      # prefecture_id: session,
-      city: session[:city],
-      # city: "",
       address_last_name: session[:address_last_name],
       address_first_name: session[:address_first_name],
       address_last_name_kana:session[:address_last_name_kana],
@@ -97,7 +93,6 @@ class SignupController < ApplicationController
       address_building: session[:address_building],
       address_phone_number:session[:address_phone_number]
     )
-    # binding.pry
     @address.save!
     redirect_to step5_signup_index_path
     # if @user.save
@@ -139,13 +134,11 @@ class SignupController < ApplicationController
   def address_params
     params.require(:address).permit(
       :prefecture_id, 
-      :city, 
       :address_last_name, 
       :address_first_name, 
       :address_last_name_kana, 
       :address_first_name_kana, 
       :address_number,
-      :address_prefecture,
       :address_city,
       :address_block,
       :address_building,
