@@ -5,7 +5,6 @@ class SignupController < ApplicationController
   end
 
   def step1_create
-    session[:image] = user_params[:image],
     session[:profile] = user_params[:profile],
     session[:nickname] = user_params[:nickname],
     session[:email] = user_params[:email],
@@ -62,7 +61,6 @@ class SignupController < ApplicationController
 
   def step4_create
     @user=User.new(
-      image: session[:image],
       profile: session[:profile],
       nickname: session[:nickname],
       email: session[:email],
