@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_04_063515) do
+ActiveRecord::Schema.define(version: 2019_09_04_064855) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_063515) do
     t.string "address_block", null: false
     t.string "address_building"
     t.string "address_phone_number"
+    t.integer "user_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -46,6 +47,14 @@ ActiveRecord::Schema.define(version: 2019_09_04_063515) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "uid"
+    t.string "provider"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -57,6 +66,8 @@ ActiveRecord::Schema.define(version: 2019_09_04_063515) do
     t.string "image", null: false
     t.string "nickname", null: false
     t.text "profile"
+    t.string "provider"
+    t.string "uid"
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
