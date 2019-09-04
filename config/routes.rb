@@ -14,7 +14,7 @@
   get '/identification' => 'users#identification'
   get '/cardselect' => 'users#cardselect'
   get '/logout' => 'users#logout'
-  get '/l ogin' => 'users#login'
+  get '/login' => 'users#login'
   resources :signup do
     collection do
       get 'step1'
