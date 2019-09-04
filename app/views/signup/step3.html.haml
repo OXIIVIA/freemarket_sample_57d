@@ -57,7 +57,9 @@
               必須
             .prefecture
               .prefecture__select
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'prefecture__select__default'
+                =f.select :address_prefecture, [["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["1992", "1992"], ["1991", "1991"], ["1990", "1990"], ["1989", "1989"], ["1988", "1988"], ["1987", "1987"], ["1986", "1986"], ["1985", "1985"], ["1984", "1984"], ["1983", "1983"], ["1982", "1982"], ["1981", "1981"], ["1980", "1980"], ["1979", "1979"], ["1978", "1978"], ["1977", "1977"], ["1976", "1976"], ["1975", "1975"], ["1974", "1974"], ["1973", "1973"], ["1972", "1972"], ["1971", "1971"], ["1970", "1970"]], {prompt: "---"}, class: "prefecture__select__default"
+                -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'prefecture__select__default'
+                -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "--",selected: session[:address]["prefecture_id"]}, {class: "prefecture_id"}
                 %i.fas.fa-angle-down
           .registration-form__content__group
             %label{for: "postnumber"}

@@ -76,17 +76,17 @@ class SignupController < ApplicationController
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
       birthdate_year: session[:birthdate_year],
-      # birthdate_year: 1989,
+      
       birthdate_month: session[:birthdate_month],
-      # birthdate_month: 2,
+     
       birthdate_day: session[:birthdate_day],
-      # birthdate_day: 13,
+      
       phone_number: session[:phone_number]
     )
     @user.save! 
     @address=Address.new(
       prefecture_id: session[:prefecture_id],
-      # prefecture_id: 1,
+      # prefecture_id: session,
       city: session[:city],
       # city: "",
       address_last_name: session[:address_last_name],
@@ -105,7 +105,7 @@ class SignupController < ApplicationController
     @address.save!
     redirect_to step5_signup_index_path
     # if @user.save
-    #   　　　# ログインするための情報を保管
+    #   # ログインするための情報を保管
     #         session[:id] = @user.id
     #         redirect_to step5_signup_index_path
     #       else
