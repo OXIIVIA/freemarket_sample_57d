@@ -67,7 +67,6 @@ class SignupController < ApplicationController
       birthdate_day: session[:birthdate_day],
       phone_number: session[:phone_number]
     )
-    # # # @user.save!
     @address=Address.new(
       prefecture_id: session[:prefecture_id],
       address_last_name: session[:address_last_name],
@@ -81,7 +80,6 @@ class SignupController < ApplicationController
       address_phone_number:session[:address_phone_number],
       user_id:  @user.id
     )
-    # # # @address.save!
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
       redirect_to action: "step4"
