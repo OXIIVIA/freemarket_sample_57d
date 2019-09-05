@@ -11,7 +11,7 @@
           .sell--container--inner
             %h2.l--single--head
               商品の情報を入力
-              
+        = form_for @item, id:"new_item" do |f|
           .sell--upload--box
             %h3.sell--upload--box__head
               出品画像
@@ -21,7 +21,7 @@
               .sell--dropbox--container__items
                 .sell--dropbox--container__items__upload
                   %ul.sell--dropbox--container__items__upload__ul
-                %label
+                  =f.label :postage, for: "postage" do
                   .sell--upload--drop--box
                     .sell--upload--drop--box2
                       %pre.visible--pc
