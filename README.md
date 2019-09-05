@@ -17,6 +17,7 @@
 - has_one :address
 - has_one :card
 - has_many :favorites
+- has_many :sns_credentials
 
 
 
@@ -45,6 +46,21 @@
 |adress|string|null: false|
 |building|string| |
 |phone_number|integer|unique: true|
+|user_id|integer|null: false, foreign_key: true|
+
+
+### Association
+
+- belongs_to :user
+
+
+
+## sns_credentials
+
+|Column|Type|Options|
+|------|----|-------|
+|uid|string||
+|provider|string||
 |user_id|integer|null: false, foreign_key: true|
 
 
