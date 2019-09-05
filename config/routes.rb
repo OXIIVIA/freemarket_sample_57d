@@ -14,8 +14,8 @@
   get '/signup' => 'users#signup'
   get '/identification' => 'users#identification'
   get '/cardselect' => 'users#cardselect'
-  get '/logout' => 'users#logout'
-  get '/login' => 'users#login'
+  get '/logout', to: 'users#logout', as: "logout"
+  get '/login', to: 'users#login', as: "login"
   resources :signup do
     collection do
       get 'step1'
