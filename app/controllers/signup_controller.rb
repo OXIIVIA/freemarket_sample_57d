@@ -1,4 +1,5 @@
 class SignupController < ApplicationController
+  require "payjp"
 
   def step1
     @user=User.new
@@ -52,6 +53,7 @@ class SignupController < ApplicationController
   end
 
   def step4_create
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     @user=User.new(
       profile: session[:profile],
       nickname: session[:nickname],
