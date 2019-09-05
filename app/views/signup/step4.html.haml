@@ -23,7 +23,7 @@
   %main.smain
     %section.smain__container
       %h2.smain__container__header 支払い方法
-      = form_with url: step4_create_signup_index_path, method: :post,controler: "signup", action: "step4_create" do |f|
+      = form_with url: step4_create_signup_index_path, method: :post, controler: "signup", action: "step4_create", id: 'charge-form' do |f|
         %input{name: "", type: "hidden", value: ""}
         .registration-form__content
           .registration-form__content__cardgroup
@@ -87,7 +87,7 @@
                 -#   %option{value:"28"} 28
                 -#   %option{value:"29"} 29
                 %i.fas.fa-angle-down
-              -# %span 月
+              %span 年
           .registration-form__content__cardgroup
             %label{for: "name"}
               セキュリティコード
