@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'items#index'
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show, :sell]
   # 以下はダミーです
   get '/mypage' => 'users#mypage'
   get '/sign_up' => 'users#resistration'

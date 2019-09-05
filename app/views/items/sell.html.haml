@@ -21,8 +21,7 @@
               .sell--dropbox--container__items
                 .sell--dropbox--container__items__upload
                   %ul.sell--dropbox--container__items__upload__ul
-                  =f.label :postage, for: "postage" do
-                  .sell--upload--drop--box
+                  = f.file_field :image, placeholder: '例) ヤマダ', class: "sell--upload--drop--box",type:"file" do
                     .sell--upload--drop--box2
                       %pre.visible--pc
                         ドラッグアンドドロップ
@@ -172,6 +171,6 @@
                   加盟店規約
                 に同意したことになります。
               .actions
-                %a.btn--red 出品する
+                =f.submit "出品する", class:"btn-default btn-default--red"
             %a.btn--gray もどる
 = render partial:"shared/regi_footer"
