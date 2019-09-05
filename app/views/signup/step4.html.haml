@@ -32,7 +32,7 @@
             %span.registration-form__content__cardgroup__require
               必須
             .field-input
-              = f.text_field :card_number, type: 'text', class: 'input-default', placeholder: '半角数字のみ', maxlength: "16"
+              = f.text_field :card_number, type: 'text', class: 'input-default', id: 'payment_card_no', placeholder: '半角数字のみ', maxlength: "16"
             -# %input{value:"", placeholder:"半角数字のみ", class: "input-default" ,type:"text"}
             %ul.registration-form__content__cardgroup--cardlist
               %li
@@ -56,7 +56,7 @@
               必須
             .expiration
               .expiration__select
-                = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{}, class: "expiration__select__month"
+                = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{}, class: "expiration__select__month", id: "payment_expiration_date_1i"
                 -# %select.expiration__select__month{name: "month"}
                 -#   %option{value:"1"} 01
                 -#   %option{value:"2"} 02
@@ -73,7 +73,7 @@
                 %i.fas.fa-angle-down
               %span 月
               .expiration__select
-                = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{}, class: "expiration__select__year"
+                = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{}, class: "expiration__select__year", id: "payment_expiration_date_2i"
                 -# %select.expiration__select__year{name: "year"}
                 -#   %option{value:"19"} 19
                 -#   %option{value:"20"} 20
@@ -94,7 +94,7 @@
             %span.registration-form__content__cardgroup__require
               必須
             .field-input
-              = f.text_field :cvc, type: 'text', class: 'input-default', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
+              = f.text_field :cvc, type: 'text', class: 'input-default', id: "payment_card_cvc", placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
             -# %input{value:"", placeholder:"カード背面4桁もしくは3桁の数字", class: "input-default" ,type:"text"}
           .registration-form__content__creditgroup
             %p.registration-form__content__creditgroup--textright

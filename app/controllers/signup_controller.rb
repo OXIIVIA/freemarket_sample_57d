@@ -84,15 +84,14 @@ class SignupController < ApplicationController
     # # # @address.save!
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
-      # redirect_to action: "step4"
+      redirect_to action: "step4"
     else
-      binding.pry
       @user.save!
       @address.save!
       customer = Payjp::Customer.create(email: session[:email], card: params['payjp-token'])
-      card = Card.new(customer_id: customer.id, card_id: customer.default_card, user: @user.id)
+      @card = Card.new(customer_id: customer.id, card_id: customer.default_card, user: @user.id)
+      @card.save!
     end
-
 
     sign_in User.find(@user.id) unless user_signed_in?
     redirect_to step5_signup_index_path
