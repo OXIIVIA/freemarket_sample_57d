@@ -16,7 +16,13 @@
             %span ブランドから探す              
       .navibox__right
         %ul.navibox__right__content
+          - if user_signed_in?
+            %li.navibox__right__content__list
+              %p
+                = current_user.nickname
           %li.navibox__right__content__list
-            %span.navibox__right__content__list--resisterbuttn 新規会員登録
+            = link_to signup_path do
+              %span.navibox__right__content__list--resisterbuttn 新規会員登録
           %li.navibox__right__content__list
-            %span.navibox__right__content__list--loginbuttn  ログイン
+            = link_to login_path do
+              %span.navibox__right__content__list--loginbuttn  ログイン
