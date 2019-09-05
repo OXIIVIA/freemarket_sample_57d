@@ -89,7 +89,7 @@ class SignupController < ApplicationController
       @user.save!
       @address.save!
       customer = Payjp::Customer.create(email: session[:email], card: params['payjp-token'])
-      @card = Card.new(customer_id: customer.id, card_id: customer.default_card, user: @user.id)
+      @card = Card.new(customer_id: customer.id, card_id: customer.default_card, user_id: @user.id)
       @card.save!
     end
 
