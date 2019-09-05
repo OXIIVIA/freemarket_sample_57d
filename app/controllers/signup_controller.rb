@@ -29,7 +29,6 @@ class SignupController < ApplicationController
     redirect_to step3_signup_index_path
   end
 
-
   def step3
     @address = Address.new
   end
@@ -51,7 +50,6 @@ class SignupController < ApplicationController
   def step4
     @card = Card.new
   end
-
 
   def step4_create
     @user=User.new(
@@ -88,10 +86,8 @@ class SignupController < ApplicationController
     redirect_to step5_signup_index_path
   end
 
-
   def step5
   end
-
 
   private
   def user_params
