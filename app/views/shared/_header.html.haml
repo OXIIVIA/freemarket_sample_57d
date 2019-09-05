@@ -16,7 +16,17 @@
             %span ブランドから探す              
       .navibox__right
         %ul.navibox__right__content
-          %li.navibox__right__content__list
-            %span.navibox__right__content__list--resisterbuttn 新規会員登録
-          %li.navibox__right__content__list
-            %span.navibox__right__content__list--loginbuttn  ログイン
+          - if user_signed_in?
+            %li.navibox__right__content__list
+              = "お知らせ"
+            %li.navibox__right__content__list
+              = "やることリスト"
+            %li.navibox__right__content__list
+              = link_to "マイページ", mypage_path(current_user.id)
+          - else
+            %li.navibox__right__content__list
+              = link_to signup_path do
+                %span.navibox__right__content__list--resisterbuttn 新規会員登録
+            %li.navibox__right__content__list
+              = link_to login_path do
+                %span.navibox__right__content__list--loginbuttn  ログイン
