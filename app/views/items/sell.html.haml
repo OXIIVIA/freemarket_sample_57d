@@ -27,13 +27,12 @@
                         ドラッグアンドドロップ
                         またはクリックしてファイルをアップロード
           .sell--content1
-            = form_for '' do |f|
-              .sell--content1__form1
-                %label.sell--content1__form1__label
-                  商品名
-                  %span.form--require 必須
-                %div
-                  %input{value:"", placeholder:"商品名（必須 40文字まで)", class: "input--default" }
+            .sell--content1__form1
+              %label.sell--content1__form1__label
+                商品名
+                %span.form--require 必須
+              %div
+                = f.text_field :name, placeholder: '商品名（必須 40文字まで)', class: "input--default"
               .sell--content1__form2
                 %label.sell--content1__form2__label
                   商品の説明
