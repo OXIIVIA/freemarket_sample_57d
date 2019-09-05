@@ -24,7 +24,8 @@
         .form-group
           = f.password_field :password, placeholder: "パスワード", class: "login-input-text input-default"
         .form-group
-          =image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx8VuXwJ4gPhLFG2-E0OHHmPTbuj8QHJFQ6rGm5pA7Kz17PvFM"
+          = recaptcha_tags
+          -# =image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx8VuXwJ4gPhLFG2-E0OHHmPTbuj8QHJFQ6rGm5pA7Kz17PvFM"
         = f.submit "ログイン", class: "login"
         =link_to "", class: "password-forget" do
           パスワードをお忘れの方
