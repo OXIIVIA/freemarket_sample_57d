@@ -20,9 +20,19 @@
             %li.navibox__right__content__list
               %p
                 = current_user.nickname
-          %li.navibox__right__content__list
-            = link_to signup_path do
-              %span.navibox__right__content__list--resisterbuttn 新規会員登録
-          %li.navibox__right__content__list
-            = link_to login_path do
-              %span.navibox__right__content__list--loginbuttn  ログイン
+            %li.navibox__right__content__list
+              %p
+                = "お知らせ"
+            %li.navibox__right__content__list
+              %p
+                = "やることリスト"
+            %li.navibox__right__content__list
+              %p
+                = "マイページ"
+          - else
+            %li.navibox__right__content__list
+              = link_to signup_path do
+                %span.navibox__right__content__list--resisterbuttn 新規会員登録
+            %li.navibox__right__content__list
+              = link_to login_path do
+                %span.navibox__right__content__list--loginbuttn  ログイン
