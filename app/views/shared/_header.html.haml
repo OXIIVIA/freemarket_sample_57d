@@ -18,17 +18,11 @@
         %ul.navibox__right__content
           - if user_signed_in?
             %li.navibox__right__content__list
-              %p
-                = current_user.nickname
+              = "お知らせ"
             %li.navibox__right__content__list
-              %p
-                = "お知らせ"
+              = "やることリスト"
             %li.navibox__right__content__list
-              %p
-                = "やることリスト"
-            %li.navibox__right__content__list
-              %p
-                = "マイページ"
+              = link_to "マイページ", mypage_path(current_user.id)
           - else
             %li.navibox__right__content__list
               = link_to signup_path do

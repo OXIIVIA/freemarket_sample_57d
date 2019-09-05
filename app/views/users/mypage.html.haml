@@ -8,7 +8,8 @@
           =link_to "#", class: "l--content__mypageicon__a" do
             %figure.l--content__mypageicon__a__figure
               %img.l--content__mypageicon__a__figure__img
-            %h2.l--content__mypageicon__a__name ユーザー名
+            %h2.l--content__mypageicon__a__name
+              = current_user.nickname
             .l--content__mypageicon__a__number
               .l--content__mypageicon__a__number--review
                 評価数
