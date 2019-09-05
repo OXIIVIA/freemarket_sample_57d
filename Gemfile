@@ -84,3 +84,5 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'active_hash'
 gem 'payjp'
+gem 'recaptcha', require: "recaptcha/rails"
+gem 'dotenv-rails'
