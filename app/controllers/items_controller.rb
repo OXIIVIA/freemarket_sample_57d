@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def sell
-    @item=Item.new
+    @item=Item.create
   end
   
 end

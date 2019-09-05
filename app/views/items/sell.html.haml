@@ -70,14 +70,7 @@
                   商品の状態
                   %span.form--require 必須
                 .select--wrap
-                  %select.select--wrap__status
-                    %option{value: 0} ---
-                    %option{value: 1} 新品、未使用
-                    %option{value: 2} 未使用に近い
-                    %option{value: 3} 目立った傷や汚れなし
-                    %option{value: 4} やや傷や汚れあり
-                    %option{value: 5} 傷や汚れあり
-                    %option{value: 6} 全体的に状態が悪い
+                  =f.select :condition, [["新品、未使用", "1"], ["未使用に近い", "2"],["目立った傷や汚れなし", "3"], ["やや傷や汚れあり", "4"],["全体的に状態が悪い", "5"]],{prompt: "---"}, class:"select--wrap__status"
                   .fa-down-icon
                     %i.fa.fa-chevron-down
                     
@@ -91,10 +84,7 @@
                   配送料の負担
                   %span.form--require 必須
                 .select--wrap
-                  %select.select--wrap__fee
-                    %option{value: 0} ---
-                    %option{value: 1} 送料込み(出品者負担)
-                    %option{value: 2} 着払い(購入者負担)
+                  =f.select :postage, [["送料込み(出品者負担)", "1"], ["着払い(購入者負担)", "2"]],{prompt: "---"}, class:"select--wrap__fee"
                   .fa-down-icon
                     %i.fa.fa-chevron-down
                     
