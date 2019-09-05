@@ -3,7 +3,7 @@
   root 'items#index'
   resources :items, only: [:index, :show]
   # 以下はダミーです
-  get '/mypage' => 'users#mypage'
+  get '/mypage/:id', to: 'users#mypage', as: "mypage"
   get '/sign_up' => 'users#resistration'
   get '/sign_up/2' => 'users#tell'
   get '/sign_up/3' => 'users#address'
