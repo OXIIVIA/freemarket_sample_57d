@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
-# マイページアクションはマイページのファイルを出すためのダミーです
 
   def mypage
+    @user = User.find(params[:id])
   end
 
-  # レジストレーションはレジストレーションファイル確認のためのダミー
   def resistration
   end
   # ダミーです
@@ -39,6 +38,7 @@ class UsersController < ApplicationController
   end
 
   def login
+    @user = User.new
   end
   
 end

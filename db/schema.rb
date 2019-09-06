@@ -10,12 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2019_09_02_050449) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
-    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "address_last_name", null: false
+    t.string "address_first_name", null: false
+    t.string "address_last_name_kana", null: false
+    t.string "address_first_name_kana", null: false
+    t.string "address_number", null: false
+    t.string "address_city", null: false
+    t.string "address_block", null: false
+    t.string "address_building"
+    t.string "address_phone_number"
+    t.integer "user_id"
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
+  create_table "personals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "p_address_number"
+    t.integer "p_address_prefecture", default: 0
+    t.string "p_address_city"
+    t.string "p_address_block"
+    t.string "p_address_building"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "uid"
+    t.string "provider"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,15 +71,22 @@ ActiveRecord::Schema.define(version: 2019_09_02_050449) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name", null: false
-    t.string "image", null: false
     t.string "nickname", null: false
-    t.string "birthdate", null: false
     t.text "profile"
     t.string "provider"
     t.string "uid"
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "birthdate_year", null: false
+    t.integer "birthdate_month", null: false
+    t.integer "birthdate_day", null: false
+    t.string "phone_number", null: false
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "users"
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items, only: [:index, :show]
   # 以下はダミーです
-  get '/mypage' => 'users#mypage'
+  get '/mypage/:id', to: 'users#mypage', as: "mypage"
   get '/sign_up' => 'users#resistration'
   get '/sign_up/2' => 'users#tell'
   get '/sign_up/3' => 'users#address'
@@ -14,7 +14,20 @@ Rails.application.routes.draw do
   get '/signup' => 'users#signup'
   get '/identification' => 'users#identification'
   get '/cardselect' => 'users#cardselect'
-  get '/logout' => 'users#logout'
-  get '/login' => 'users#login'
+  get '/logout', to: 'users#logout', as: "logout"
+  get '/login', to: 'users#login', as: "login"
+  resources :signup do
+    collection do
+      get 'step1'
+      post 'step1_create'
+      get 'step2'
+      post 'step2_create'
+      get 'step3'
+      post 'step3_create'
+      get 'step4'
+      post 'step4_create'
+      get 'step5'
+    end
+  end
   get '/sell' => 'items#sell'
 end
