@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(version: 2019_09_09_103649) do
     t.integer "user_id"
     t.string "uid"
     t.string "provider"
+
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "uid"
+    t.string "provider"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -94,6 +104,15 @@ ActiveRecord::Schema.define(version: 2019_09_09_103649) do
     t.string "image"
     t.string "provider"
     t.string "uid"
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "birthdate_year", null: false
+    t.integer "birthdate_month", null: false
+    t.integer "birthdate_day", null: false
+    t.string "phone_number", null: false
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

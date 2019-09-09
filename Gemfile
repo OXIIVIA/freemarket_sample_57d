@@ -83,7 +83,9 @@ gem 'fog-aws'
 gem 'devise'
 gem 'jquery-rails'
 gem 'active_hash'
+gem 'payjp'
+gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
-gem 'omniauth'
+gem "omniauth-rails_csrf_protection"
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'

@@ -8,8 +8,7 @@
       .content__chapter
         %form.content__chapter__form
           .content__chapter__form__btn
-            = link_to "",  class: 'content__chapter__form__btn__red' do
-              %button.content__chapter__form__btn__red ログアウト
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'content__chapter__form__btn__red'
     = render partial:"shared/side_bar"
 = render partial:"shared/ctabanner"
 = render partial:"shared/footer"

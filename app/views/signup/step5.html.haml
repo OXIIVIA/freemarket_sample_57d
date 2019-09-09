@@ -30,5 +30,6 @@
             %p.registration-form__content__group--finish ありがとうございます。
             %p.registration-form__content__group--finish 会員登録が完了しました。
           .registration-form__content__group
-            %a.btn-default.btn-default--red メルカリを始める
+            = link_to root_path, class: "btn-default btn-default--red" do 
+              メルカリを始める
   = render partial:"shared/regi_footer"
