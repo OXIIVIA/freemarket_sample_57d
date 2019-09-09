@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'items#index'
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show, :new, :create]
   # 以下はダミーです
   get '/mypage/:id', to: 'users#mypage', as: "mypage"
   get '/sign_up' => 'users#resistration'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#signup'
   get '/identification' => 'users#identification'
   get '/cardselect' => 'users#cardselect'
+
   get '/logout', to: 'users#logout', as: "logout"
   get '/login', to: 'users#login', as: "login"
   resources :signup do
@@ -29,5 +30,4 @@ Rails.application.routes.draw do
       get 'step5'
     end
   end
-  get '/sell' => 'items#sell'
 end

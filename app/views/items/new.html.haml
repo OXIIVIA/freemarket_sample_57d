@@ -11,30 +11,29 @@
           .sell--container--inner
             %h2.l--single--head
               商品の情報を入力
-              
+        = form_with model: @item, method: :post do |f|
+        
           .sell--upload--box
             %h3.sell--upload--box__head
               出品画像
               %span.form--require 必須
-            %p.sell--upload--box__p 最大10枚までアップロードできます
+            %p.sell--upload--box__p 最大1枚までアップロードできます
             .sell--dropbox--container
               .sell--dropbox--container__items
                 .sell--dropbox--container__items__upload
                   %ul.sell--dropbox--container__items__upload__ul
-                %label
-                  .sell--upload--drop--box
+                  = f.file_field :image, class: "sell--upload--drop--box",type:"file" do
                     .sell--upload--drop--box2
                       %pre.visible--pc
                         ドラッグアンドドロップ
                         またはクリックしてファイルをアップロード
           .sell--content1
-            = form_for '' do |f|
-              .sell--content1__form1
-                %label.sell--content1__form1__label
-                  商品名
-                  %span.form--require 必須
-                %div
-                  %input{value:"", placeholder:"商品名（必須 40文字まで)", class: "input--default" }
+            .sell--content1__form1
+              %label.sell--content1__form1__label
+                商品名
+                %span.form--require 必須
+              %div
+                = f.text_field :name, placeholder: '商品名（必須 40文字まで)', class: "input--default"
               .sell--content1__form2
                 %label.sell--content1__form2__label
                   商品の説明
@@ -49,21 +48,8 @@
                   %span.form--require 必須
                 %div
                   .select--wrap
-                    %select.select--wrap__category
-                      %option{value: 0} ---
-                      %option{value: 1} レディース
-                      %option{value: 2} メンズ
-                      %option{value: 3} ベビー・キッズ
-                      %option{value: 4} インテリア・住まい・小物
-                      %option{value: 5} 本・音楽・ゲーム
-                      %option{value: 6} おもちゃ・ホビー・グッズ
-                      %option{value: 7} コスメ・香水・美容
-                      %option{value: 8} 家電・スマホ・カメラ
-                      %option{value: 9} スポーツ・レジャー
-                      %option{value: 10} ハンドメイド
-                      %option{value: 11} チケット
-                      %option{value: 12} 自動車・オートバイ
-                      %option{value: 13} その他
+                    =f.select :category_id, [["レディース", "1"], ["メンズ", "2"],["ベビー・キッズ", "3"], ["インテリア・住まい・小物", "4"],["本・音楽・ゲーム", "5"], ["おもちゃ・ホビー・グッズ", "6"], ["コスメ・香水・美容", "7"], ["家電・スマホ・カメラ", "8"], ["スポーツ・レジャー", "9"], ["ハンドメイド", "10"], ["チケット", "11"], ["自動車・オートバイ", "12"], ["その他", "13"]],{prompt: "---"}, class:"select--wrap__category"
+
                     .fa-down-icon
                       %i.fa.fa-chevron-down
 
@@ -72,14 +58,7 @@
                   商品の状態
                   %span.form--require 必須
                 .select--wrap
-                  %select.select--wrap__status
-                    %option{value: 0} ---
-                    %option{value: 1} 新品、未使用
-                    %option{value: 2} 未使用に近い
-                    %option{value: 3} 目立った傷や汚れなし
-                    %option{value: 4} やや傷や汚れあり
-                    %option{value: 5} 傷や汚れあり
-                    %option{value: 6} 全体的に状態が悪い
+                  =f.select :condition, [["新品、未使用", "1"], ["未使用に近い", "2"],["目立った傷や汚れなし", "3"], ["やや傷や汚れあり", "4"],["全体的に状態が悪い", "5"]],{prompt: "---"}, class:"select--wrap__status"
                   .fa-down-icon
                     %i.fa.fa-chevron-down
                     
@@ -93,36 +72,26 @@
                   配送料の負担
                   %span.form--require 必須
                 .select--wrap
-                  %select.select--wrap__fee
-                    %option{value: 0} ---
-                    %option{value: 1} 送料込み(出品者負担)
-                    %option{value: 2} 着払い(購入者負担)
+                  =f.select :postage, [["送料込み(出品者負担)", "1"], ["着払い(購入者負担)", "2"]],{prompt: "---"}, class:"select--wrap__fee"
                   .fa-down-icon
                     %i.fa.fa-chevron-down
                     
               .sell--content3__form1__group2
-                = form_for '' do |f|
-                  %label.sell--content3__form1__group2__label
-                    発送元の地域
-                    %span.form--require 必須
-                  .select--wrap
-                    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'input'
-
-                    .fa-down-icon
-                      %i.fa.fa-chevron-down
+                %label.sell--content3__form1__group2__label
+                  発送元の地域
+                  %span.form--require 必須
+                .select--wrap
+                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'input'
+                  .fa-down-icon
+                    %i.fa.fa-chevron-down
               .sell--content3__form1__group3
                 %label.sell--content3__form1__group3__label
                   発送までの日数
                   %span.form--require 必須
                 .select--wrap
-                  %select.select--wrap__date
-                    %option{value: 0} ---
-                    %option{value: 1} 1〜2日で発送
-                    %option{value: 2} 2〜3日で発送
-                    %option{value: 3} 4〜7日で発送
+                  = f.select :deliver_date, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]] ,{prompt: "---"}, class:"select--wrap__date"
                   .fa-down-icon
                     %i.fa.fa-chevron-down
-                    
           .sell--content4
             %h3.sell--content4__head 販売価格(300〜9,999,999)
             =link_to "#", class: 'form--question' do
@@ -130,15 +99,14 @@
             .sell--content4__form1
               %ul.sell--content4__form1__ul
                 %li.sell--content4__form1__ul__group
-                  = form_for '' do |f|
-                    .clearfix
-                      %label.l--left__price
-                        価格
-                        %span.form--require 必須
-                      .l--right__price               
-                        %p ¥
-                        %div.input--price
-                          =f.text_field :price,class:"input--price__default",placeholder: "例）300"
+                  .clearfix
+                    %label.l--left__price
+                      価格
+                      %span.form--require 必須
+                    .l--right__price               
+                      %p ¥
+                      %div.input--price
+                        = f.text_field :price, class: 'input--price__default',maxlength: "6", id: "sell-price", placeholder: '例）300'
                        
                 %li.cl1
                   .l--left__fee
@@ -172,6 +140,6 @@
                   加盟店規約
                 に同意したことになります。
               .actions
-                %a.btn--red 出品する
+                =f.submit "出品する", class:"btn-default btn-default--red"
             %a.btn--gray もどる
 = render partial:"shared/regi_footer"

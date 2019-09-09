@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_050449) do
+ActiveRecord::Schema.define(version: 2019_09_09_103649) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -37,6 +37,24 @@ ActiveRecord::Schema.define(version: 2019_09_02_050449) do
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "postage", null: false
+    t.integer "price", null: false
+    t.string "condition", null: false
+    t.integer "saler_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
+    t.text "image"
+    t.integer "prefecture_id", null: false
+    t.integer "deliver_date", null: false
+    t.integer "category_id", null: false
+    t.integer "brand_id"
+    t.string "size"
+    t.integer "buyer_id"
+  end
+
   create_table "personals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "p_address_number"
     t.integer "p_address_prefecture", default: 0
@@ -51,6 +69,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_050449) do
     t.integer "user_id"
     t.string "uid"
     t.string "provider"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_050449) do
     t.integer "user_id"
     t.string "uid"
     t.string "provider"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,6 +93,15 @@ ActiveRecord::Schema.define(version: 2019_09_02_050449) do
     t.datetime "updated_at", null: false
     t.string "nickname", null: false
     t.text "profile"
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "birthdate_year", null: false
+    t.integer "birthdate_month", null: false
+    t.integer "birthdate_day", null: false
+    t.string "phone_number", null: false
+    t.string "image"
     t.string "provider"
     t.string "uid"
     t.string "last_name", null: false
