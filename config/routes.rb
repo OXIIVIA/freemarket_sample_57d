@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'items#index'
-  resources :items, only: [:index, :show, :sell]
+  resources :items, only: [:index, :show, :new, :create]
   # 以下はダミーです
   get '/mypage' => 'users#mypage'
   get '/sign_up' => 'users#resistration'
@@ -16,5 +16,11 @@ Rails.application.routes.draw do
   get '/cardselect' => 'users#cardselect'
   get '/logout' => 'users#logout'
   get '/login' => 'users#login'
-  get '/sell' => 'items#sell'
+  get '/new' => 'items#new'
+
+
+
+  
+  
+    
 end
