@@ -22,7 +22,7 @@
               .sell--dropbox--container__items
                 .sell--dropbox--container__items__upload
                   %ul.sell--dropbox--container__items__upload__ul
-                  = f.file_field :image, class: "sell--upload--drop--box",type:"file" do
+                  = f.file_field :image, class: "sell--upload--drop--box" do
                     .sell--upload--drop--box2
                       %pre.visible--pc
                         ドラッグアンドドロップ
@@ -47,9 +47,8 @@
                   カテゴリー
                   %span.form--require 必須
                 %div
-                  .select--wrap
-                    =f.select :category_id, [["レディース", "1"], ["メンズ", "2"],["ベビー・キッズ", "3"], ["インテリア・住まい・小物", "4"],["本・音楽・ゲーム", "5"], ["おもちゃ・ホビー・グッズ", "6"], ["コスメ・香水・美容", "7"], ["家電・スマホ・カメラ", "8"], ["スポーツ・レジャー", "9"], ["ハンドメイド", "10"], ["チケット", "11"], ["自動車・オートバイ", "12"], ["その他", "13"]],{prompt: "---"}, class:"select--wrap__category"
-
+                  .select--wra
+                    =f.select :category_id, [["レディース", "レディース"], ["メンズ", "メンズ"],["ベビー・キッズ", "ベビー・キッズ"], ["インテリア・住まい・小物", "インテリア・住まい・小物"],["本・音楽・ゲーム", "本・音楽・ゲーム"], ["おもちゃ・ホビー・グッズ", "おもちゃ・ホビー・グッズ"], ["コスメ・香水・美容", "コスメ・香水・美容"], ["家電・スマホ・カメラ", "家電・スマホ・カメラ"], ["スポーツ・レジャー", "スポーツ・レジャー"], ["ハンドメイド", "ハンドメイド"], ["チケット", "チケット"], ["自動車・オートバイ", "自動車・オートバイ"], ["その他", "その他"]],{prompt: "---"}, class:"select--wrap__category"
                     .fa-down-icon
                       %i.fa.fa-chevron-down
 
@@ -58,7 +57,7 @@
                   商品の状態
                   %span.form--require 必須
                 .select--wrap
-                  =f.select :condition, [["新品、未使用", "1"], ["未使用に近い", "2"],["目立った傷や汚れなし", "3"], ["やや傷や汚れあり", "4"],["全体的に状態が悪い", "5"]],{prompt: "---"}, class:"select--wrap__status"
+                  =f.select :condition, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"],["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"],["全体的に状態が悪い", "全体的に状態が悪い"]],{prompt: "---"}, class:"select--wrap__status"
                   .fa-down-icon
                     %i.fa.fa-chevron-down
                     
@@ -72,7 +71,7 @@
                   配送料の負担
                   %span.form--require 必須
                 .select--wrap
-                  =f.select :postage, [["送料込み(出品者負担)", "1"], ["着払い(購入者負担)", "2"]],{prompt: "---"}, class:"select--wrap__fee"
+                  =f.select :postage, [["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]],{prompt: "---"}, class:"select--wrap__fee"
                   .fa-down-icon
                     %i.fa.fa-chevron-down
                     
@@ -142,4 +141,5 @@
               .actions
                 =f.submit "出品する", class:"btn-default btn-default--red"
             %a.btn--gray もどる
-= render partial:"shared/regi_footer"
+
+  = render partial:"shared/regi_footer"

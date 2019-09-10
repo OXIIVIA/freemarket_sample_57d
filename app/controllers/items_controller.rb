@@ -1,8 +1,12 @@
 class ItemsController < ApplicationController
+  # before_action :authenticate_user!
+  before_action :set_product, only: :show
+
   def index
   end
 
   def show
+    @user = User.find(@item.saler_id)
   end
 
   def new
@@ -12,15 +16,16 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
-    @item.save!
-    redirect_to root_path
-
-    # if @item.save
-    #   # binding.pry
-    #   redirect_to root_path
-    # else
-    #   render :new
-    # end
+  #   if params[:img] != nil
+  #     img = MiniMagick::Image.read(params[:img])
+  #     img.resize_to_fill "128x128"
+  #     img.write "public/images/hoge.jpg"
+  #  end
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   
@@ -41,16 +46,13 @@ class ItemsController < ApplicationController
       :id,
       :size,
       :group_id,
-      :saler_id,
       :buyer_id,
-      
-      
-    )  
+    ).merge(saler_id: current_user.id)
   end
 
-  # def set_product
-  #   @item = Item.find(params[:id])
-  #  end
+  def set_product
+    @item = Item.find(params[:id])
+   end
 
   end
 

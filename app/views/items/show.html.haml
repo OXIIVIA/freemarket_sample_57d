@@ -5,12 +5,12 @@
     .itemcontainer__box__content
       .itemcontainer__box__content__detail
         %h2.item-name
-          正規品 HUBLOT クラシックフュージョン クロノグラフ
+          = @item.name
         %p.item-sumarry 『正規品 HUBLOT クラシックフュージョン クロノグラフ』は、11回の取引実績を持つTakeさんから出品されました。ウブロ（腕時計(アナログ)/メンズ）の商品で、京都府から1~2日で発送されます。
         .itemmain
           .itemmain__photo
             .itemmain__photo--main
-              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_1.jpg?1566975788"
+              = image_tag @item.image.url, class: "itemmain__photo--main"
             .itemmain__photo--main__clearfix
               .itemmain__photo--sub
                 =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_2.jpg?1566975788"
@@ -24,33 +24,34 @@
                 %th
                   出品者
                 %td
+                  = @user.nickname
               %tr
                 %th
                   カテゴリー
                 %td
-                  時計
+                  = @item.category_id
               %tr
                 %th
                   商品の状態
                 %td
-                  新品に近い
+                  = @item.condition
               %tr
                 %th
                   配送元地域
                 %td
-                  大阪
+                  = @item.prefecture.name
               %tr
                 %th
                   配送の目安
                 %td
-                  1日
+                  = @item.deliver_date
               %tr
                 %th
                   公開範囲
                 %td
           .item-price
             %span.item-price__bold
-              ¥650,000
+              = "¥#{@item.price.to_s(:delimited)}"
             %span.item-price__tax
               (税込)
             %span.item-price__shipping
@@ -59,13 +60,7 @@
             購入画面に進む
           .item-description
             %p  
-              HUBLOT クラシックフュージョン チタニウム クロノグラフです 521.nx. 1171.lr 正規品
-              %br
-              少しだけ、傷がありますが、全然気にはならいないと思いますが 神経質な方はご遠慮ください。
-              %br
-              売れなければ自分で使用しようと思っています！
-              %br
-              偽物とのすり替え対策で返品はおこなってませんのでよろしくお願い申し上げます。
+              = @item.description
           .item-reputation
             .item-reputation__left
               %button.item-reputation__left--like
