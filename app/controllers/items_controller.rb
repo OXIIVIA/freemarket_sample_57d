@@ -16,9 +16,21 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      flash[:notice] = "商品を削除しました"
       redirect_to root_path
     else
+      flash[:notice] = "商品の削除に失敗しました"
       render :new
+    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.saler_id == current_user.id
+      @item.destroy
+      redirect_to mypage_path(current_user)
+    else
+      render :show
     end
   end
 
