@@ -18,8 +18,8 @@ class ItemsController < ApplicationController
     if @item.save
       flash[:notice] = "商品を削除しました"
       redirect_to root_path
-      flash[:notice] = "商品の削除に失敗しました"
     else
+      flash[:notice] = "商品の削除に失敗しました"
       render :new
     end
   end
