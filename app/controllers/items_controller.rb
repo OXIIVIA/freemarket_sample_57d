@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_product, only: :show
 
   def index
@@ -16,11 +16,6 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
-  #   if params[:img] != nil
-  #     img = MiniMagick::Image.read(params[:img])
-  #     img.resize_to_fill "128x128"
-  #     img.write "public/images/hoge.jpg"
-  #  end
     if @item.save
       redirect_to root_path
     else
