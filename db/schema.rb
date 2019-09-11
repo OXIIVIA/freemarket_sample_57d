@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2019_09_10_092551) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
     t.datetime "created_at", null: false
