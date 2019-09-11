@@ -1,17 +1,16 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product, only: :show
+  before_action :set_seler, only: :show
 
   def index
   end
 
   def show
-    @user = User.find(@item.saler_id)
   end
 
   def new
-    @item=Item.new
-    
+    @item=Item.new 
   end
   
   def create
@@ -47,7 +46,12 @@ class ItemsController < ApplicationController
 
   def set_product
     @item = Item.find(params[:id])
-   end
-
   end
+
+  def set_seler
+    @user = User.find(@item.saler_id)
+  end
+
+
+end
 
