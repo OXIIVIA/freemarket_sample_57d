@@ -30,5 +30,4 @@ Rails.application.routes.draw do
       get 'step5'
     end
   end
-
 end
