@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update]
   before_action :set_seler, only: :show 
 
-  def index
+  def index    
+    @items =Item.order("created_at DESC").limit(4)
   end
 
   def show
