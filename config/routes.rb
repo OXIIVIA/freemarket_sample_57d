@@ -31,5 +31,4 @@ Rails.application.routes.draw do
     end
   end
 
-  # get "items/:id/edit" => "items#edit"
 end
