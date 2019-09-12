@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       flash[:notice] = "商品を削除しました"
-      redirect_to root_path
+      redirect_to mypage_path(current_user)
     else
       flash[:notice] = "商品の削除に失敗しました"
       render :new
