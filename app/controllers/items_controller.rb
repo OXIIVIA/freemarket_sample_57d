@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_product, only: :show
-  before_action :set_seler, only: :show
+  before_action :set_product, only: [:show, :edit, :update]
+  before_action :set_seler, only: :show 
 
   def index
   end
@@ -31,6 +31,18 @@ class ItemsController < ApplicationController
       redirect_to mypage_path(current_user)
     else
       render :show
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      flash[:notice] = "商品を編集しました"
+      redirect_to mypage_path(current_user)
+    else
+      render 'items/edit'
     end
   end
 
