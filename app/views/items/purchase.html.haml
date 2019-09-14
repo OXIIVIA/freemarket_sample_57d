@@ -1,0 +1,53 @@
+.single-buy_container
+  = render partial:"shared/single_header"
+  .purchase-main
+  .purchase-main__container
+    %h2.purchase-head
+      購入内容の確認
+    .purchase-content
+      .purchase-item
+        = image_tag @item.image.url, class: 'purchase-item__image'
+        %p.purchase-item__name
+          = @item.name
+        %p.purchase-item__price
+          %span<>¥
+          = @item.price.to_s(:delimited, delimiter: ',')
+          %span.purchase-item__shipment-fee 送料込み
+        .purchase-item__point
+          ポイントはありません
+        .purchase-item__total-price-label
+          支払い金額
+          %span.purchase-item__total-price<>
+            ¥
+            = @item.price.to_s(:delimited, delimiter: ',')
+          = link_to "購入する", pay_items_path, method: :post, class: "purchase-purchase-btn"
+      .purchase-user
+        %h3.purchase-address__head
+          配送先
+        .purchase-address
+          %span<>〒
+          = @edited_address_number
+          %br
+          = current_user.address.prefecture.name
+          = current_user.address.address_city
+          = current_user.address.address_block
+          %br
+          = current_user.address.address_last_name
+          = current_user.address.address_first_name
+        .purchase-link
+          = link_to("変更する＞",
+            root_path)
+      .purchase-user.purchase-user--btm
+        %h3.purchase-address__head
+          支払い方法
+        .purchase-address
+          - if current_user.card.blank?
+            %span /
+          - else
+            = "************#{@card_information.last4}"
+            %br
+            = "#{@exp_month} \/ #{@exp_year}"
+          .purchase-link
+            = link_to("変更する＞",
+              root_path)
+  = render partial:"shared/regi_footer"
