@@ -26,7 +26,7 @@
           配送先
         .purchase-address
           %span<>〒
-          = "#{current_user.address.address_number.slice(0,3)}-#{current_user.address.address_number.slice(3,7)}"
+          = @edited_address_number
           %br
           = current_user.address.prefecture.name
           = current_user.address.address_city

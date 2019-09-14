@@ -54,6 +54,7 @@ class ItemsController < ApplicationController
     @card_information = customer.cards.retrieve(card.card_id)
     @exp_month = @card_information.exp_month.to_s
     @exp_year = @card_information.exp_year.to_s.slice(2,3)
+    @edited_address_number = "#{current_user.address.address_number.slice(0,3)}-#{current_user.address.address_number.slice(3,7)}"
   end
 
   def pay
