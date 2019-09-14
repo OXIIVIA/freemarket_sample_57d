@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :set_search
+
   def mypage
     @user = User.find(params[:id])
   end
@@ -39,6 +41,11 @@ class UsersController < ApplicationController
 
   def login
     @user = User.new
+  end
+
+  private
+  def set_search
+    @q = Item.search(params[:q])
   end
   
 end

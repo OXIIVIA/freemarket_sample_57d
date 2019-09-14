@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update]
   before_action :set_seler, only: :show 
-  before_action :correct_user, only: [:edit, :update]
+  before_action :access_check, only: [:edit, :update]
 
   def index
     @q = Item.ransack(params[:q])
@@ -96,8 +96,7 @@ class ItemsController < ApplicationController
     @q = Item.search(params[:q])
   end
 
-  def correct_user
-    @item = Item.find(params[:id])
+  def access_check
     if @item.saler_id != current_user.id
       redirect_to root_path
     end
