@@ -13,7 +13,7 @@ crumb :profile do
 end
 
 crumb :logout do 
-  link "ログアウト",users_path(:logout)
+  link "ログアウト",logout_path(:logout)
   parent :show
 end
 
