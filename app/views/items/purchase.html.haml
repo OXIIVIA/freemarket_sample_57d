@@ -26,7 +26,7 @@
           配送先
         .purchase-address
           %span<>〒
-          = current_user.address.address_number
+          = "#{current_user.address.address_number.slice(0,3)}-#{current_user.address.address_number.slice(3,7)}"
           %br
           = current_user.address.prefecture.name
           = current_user.address.address_city
@@ -44,15 +44,9 @@
           - if current_user.card.blank?
             %span /
           - else
-            ************
-            %span<>
-            -# %br
-            -# = sprintf("%02d", @cards[0]["exp_month"])
-            -# %span /
-            -# = @cards[0]["exp_year"] % 100
-            -# %br
-            -# = render "cards/cards",
-            -#   brand: @cards[0]["brand"]
+            = "************#{@card_information.last4}"
+            %br
+            = "#{@exp_month} \/ #{@exp_year}"
           .purchase-link
             = link_to("変更する＞",
               root_path)

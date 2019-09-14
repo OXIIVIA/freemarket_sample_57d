@@ -51,6 +51,12 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    card = current_user.card
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    @card_information = customer.cards.retrieve(card.card_id)
+    @exp_month = @card_information.exp_month.to_s
+    @exp_year = @card_information.exp_year.to_s.slice(2,3)
   end
 
   def pay
