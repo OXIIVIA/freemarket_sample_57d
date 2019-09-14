@@ -20,7 +20,7 @@
           %span.purchase-item__total-price<>
             ¥
             = @item.price.to_s(:delimited, delimiter: ',')
-          = link_to "購入する", root_path, class: "purchase-purchase-btn"
+          = link_to "購入する", pay_items_path, method: :post, class: "purchase-purchase-btn"
       .purchase-user
         %h3.purchase-address__head
           配送先
