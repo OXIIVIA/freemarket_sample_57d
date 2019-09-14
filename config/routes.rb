@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get 'purchase/:id', to: 'items#purchase', as: 'purchase'
       post 'pay/:id', to: 'items#pay', as: 'pay'
+      get '/search', to: 'items#search', as: 'search'
     end
   end
 
