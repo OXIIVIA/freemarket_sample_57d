@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'items#index'
-  resources :items
-
+  resources :items do
+    collection do
+      get '/search', to: 'items#search', as: 'search'
+    end
+  end
+  
   get '/mypage/:id', to: 'users#mypage', as: "mypage"
   get '/sign_up' => 'users#resistration'
   get '/sign_up/2' => 'users#tell'

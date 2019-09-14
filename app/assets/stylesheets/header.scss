@@ -34,6 +34,16 @@
             outline: 0;
             border: 1px solid #0099e8;
           }
+        .hidden{
+          position: absolute;
+            margin-top: -1px;
+            top: 0;
+            right: 0;
+            height:40px;
+            width: 30px;
+            height: 40px;
+            border-radius: 4px;
+        }
         }
         
         .input-default-icon{
@@ -140,3 +150,4 @@
     }
   }
 }
+

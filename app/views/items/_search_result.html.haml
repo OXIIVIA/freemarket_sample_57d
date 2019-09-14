@@ -1,0 +1,14 @@
+.container__right
+  .container__right__search-result
+    .container__right__search-result__item-name
+    - if @q.name_cont.present?
+      .item-result
+        = @q.name_cont
+      .item-result-sub
+        の検索結果
+    - else
+      .item-result
+        新着商品 
+        
+  = render "items/search_detail"
+ 
