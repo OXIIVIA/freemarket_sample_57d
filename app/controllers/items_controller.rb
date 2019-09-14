@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_product, only: [:show, :edit, :update]
+  before_action :set_product, only: [:show, :edit, :update, :purchase]
   before_action :set_seler, only: :show 
 
   def index    
@@ -45,6 +45,9 @@ class ItemsController < ApplicationController
     else
       render 'items/edit'
     end
+  end
+
+  def purchase
   end
 
   
