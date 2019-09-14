@@ -49,7 +49,7 @@
             %span.item-price__shipping
               送料込み
             .buy-buttn
-              購入画面に進む
+              = link_to "購入画面に進む", purchase_path(@item)
           .item-description
             %p  
               = @item.description
