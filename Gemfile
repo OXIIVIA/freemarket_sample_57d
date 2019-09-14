@@ -91,3 +91,4 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "gretel"
 gem 'squasher', '>= 0.6.0'
+gem 'ransack'
