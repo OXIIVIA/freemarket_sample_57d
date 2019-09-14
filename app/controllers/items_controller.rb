@@ -2,9 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :purchase, :pay]
   before_action :set_seler, only: :show 
-
-  require 'payjp'
-
+  before_action :set_payjp_api, only: [:purchase, :pay]
 
   def index    
     @items =Item.order("created_at DESC").limit(4)
@@ -51,7 +49,6 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     card = current_user.card
     customer = Payjp::Customer.retrieve(card.customer_id)
     @card_information = customer.cards.retrieve(card.card_id)
@@ -61,16 +58,16 @@ class ItemsController < ApplicationController
 
   def pay
     @card = current_user.card
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     charge = Payjp::Charge.create(
     amount: @item.price,
     customer: @card.customer_id,
     currency: 'jpy'
     )
-    if @item.update(buyer_id: current_user.id) 
-      redirect_to action: :index
+    if @item.buyer_id == nil && @item.saler_id != current_user.id
+      @item.update(buyer_id: current_user.id) 
+      redirect_to items_path
     else
-      redirect_to action: :purchase
+      redirect_to purchase_items_path(@item)
     end
   end
 
@@ -102,6 +99,10 @@ class ItemsController < ApplicationController
 
   def set_seler
     @user = User.find(@item.saler_id)
+  end
+
+  def set_payjp_api
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
   end
 
 
