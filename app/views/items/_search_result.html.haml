@@ -1,0 +1,27 @@
+.container__right
+  .container__right__search-result
+    .container__right__search-result__item-name
+    - if @q.name_cont.present?
+      .item-result
+        = @q.name_cont
+      .item-result-sub
+        の検索結果
+    - else
+      .item-result
+        新着商品 
+        
+  .container__right__displayed-results
+    .container__right__displayed-results__display
+      = "1-#{@items.length}件表示"
+  .container__right__search-item
+    .container__right__search-item__results
+      - @items.each do |item|
+        .container__right__search-item__results__box
+          =link_to item_path(item.id),method: :get do
+            .container__right__search-item__results__box__image-box
+              = image_tag item.image.url, alt: "画像1", class: "owl-lazy"
+              .container__right__search-item__results__box__image-box__name-box
+                = item.name
+              .container__right__search-item__results__box__image-box__price
+                = item.price
+ 
