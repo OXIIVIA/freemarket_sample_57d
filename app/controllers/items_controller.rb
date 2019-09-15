@@ -22,7 +22,9 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
-    if @item.save
+
+    if @item.valid?
+      @item.save
       flash[:notice] = "商品を削除しました"
       redirect_to mypage_path(current_user)
     else
