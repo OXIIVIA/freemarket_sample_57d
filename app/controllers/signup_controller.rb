@@ -6,21 +6,9 @@ class SignupController < ApplicationController
   end
 
   def step1_create
-    # session[:profile] = user_params[:profile],
     @user = User.new(user_params)
     if @user.valid?
       session[:userparams] = user_params
-      # session[:nickname] = user_params[:nickname],
-      # session[:email] = user_params[:email],
-      # session[:password] = user_params[:password],
-      # session[:password_confirmation] = user_params[:password_confirmation],
-      # session[:last_name] = user_params[:last_name],
-      # session[:first_name] = user_params[:first_name],
-      # session[:last_name_kana] = user_params[:last_name_kana],
-      # session[:first_name_kana] = user_params[:first_name_kana],
-      # session[:birthdate_year] = user_params[:birthdate_year],
-      # session[:birthdate_month] = user_params[:birthdate_month],
-      # session[:birthdate_day] = user_params[:birthdate_day]
       redirect_to step2_signup_index_path
     else
       redirect_to root_path
