@@ -35,6 +35,8 @@
               必須
             .field-input
             = f.text_field :nickname, placeholder: '例) メルカリ太郎', class: "input-default" ,value: session[:nickname]
+            = render 'error_messages',
+              errors: @user.errors.full_messages_for(:nickname)
           .registration-form__content__group
             %label{for: "email"}
               メールアドレス
@@ -42,6 +44,8 @@
               必須
             .field-input
               = f.email_field :email, placeholder: 'PC・携帯どちらでも可', class: "input-default",value: session[:email]
+              = render 'error_messages',
+                errors: @user.errors.full_messages_for(:email)
           .registration-form__content__group
             %label{for: "password"}
               パスワード
@@ -49,6 +53,8 @@
               必須
             .field-input
             = f.password_field :password, placeholder: '7文字以上', class: "input-default",value: session[:pasword]
+            = render 'error_messages',
+              errors: @user.errors.full_messages_for(:password)
           .registration-form__content__group
             %label{for: "password"}
               パスワード(確認)
@@ -56,6 +62,8 @@
               必須
             .field-input
             = f.password_field :password_confirmation, placeholder: '7文字以上', class: "input-default",value: session[:password_confirmation]
+            = render 'error_messages',
+              errors: @user.errors.full_messages_for(:password_confirmation)
           .registration-form__content__group
             %h3.registration-form__content__group--sub 本人確認
             %p.registration-form__content__group--text
@@ -69,6 +77,10 @@
             = f.text_field :last_name, placeholder: '例) 山田', class: "input-default__half",type:"text",value: session[:last_name]
             .field-input__half
             = f.text_field :first_name, placeholder: '例) 彩', class: "input-default__half",type:"text",value: session[:first_name]
+            = render 'error_messages',
+              errors: @user.errors.full_messages_for(:last_name)
+            = render 'error_messages',
+              errors: @user.errors.full_messages_for(:first_name)
           .registration-form__content__group
             %label{for: "name"}
               お名前カナ(全角)
@@ -78,6 +90,10 @@
             = f.text_field :last_name_kana, placeholder: '例) ヤマダ', class: "input-default__half",type:"text",value: session[:last_name_kana]
             .field-input__half
             = f.text_field :first_name_kana, placeholder: '例) アヤ', class: "input-default__half",type:"text",value: session[:first_name_kana]
+            = render 'error_messages',
+              errors: @user.errors.full_messages_for(:last_name_kana)
+            = render 'error_messages',
+              errors: @user.errors.full_messages_for(:first_name_ka)
           .registration-form__content__group
             %label{for: "name"}
               生年月日
@@ -97,6 +113,12 @@
                 =f.select :birthdate_day, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"], ["17", "17"], ["18", "18"], ["19", "19"], ["20", "20"], ["21", "21"], ["22", "22"], ["23", "23"], ["24", "24"], ["25", "25"], ["26", "26"], ["27", "27"], ["28", "28"], ["29", "29"], ["30", "30"], ["31", "31"]], {prompt: "---"}, class: "birthday__select__default"
                 %i.fas.fa-angle-down
               %span 日
+              = render 'error_messages',
+                errors: @user.errors.full_messages_for(:birthdate_year)
+              = render 'error_messages',
+                errors: @user.errors.full_messages_for(:birthdate_month)
+              = render 'error_messages',
+                errors: @user.errors.full_messages_for(:birthdate_day)
           %p.birthday--info
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           .registration-form__content__group

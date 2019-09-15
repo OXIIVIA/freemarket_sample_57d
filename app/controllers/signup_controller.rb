@@ -7,11 +7,11 @@ class SignupController < ApplicationController
 
   def step1_create
     @user = User.new(user_params)
+    session[:userparams] = user_params
     if @user.valid?
-      session[:userparams] = user_params
       redirect_to step2_signup_index_path
     else
-      redirect_to root_path
+      render :step1
     end
   end
   
