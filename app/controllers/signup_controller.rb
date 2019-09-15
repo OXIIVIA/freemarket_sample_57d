@@ -6,19 +6,25 @@ class SignupController < ApplicationController
   end
 
   def step1_create
-    session[:profile] = user_params[:profile],
-    session[:nickname] = user_params[:nickname],
-    session[:email] = user_params[:email],
-    session[:password] = user_params[:password],
-    session[:password_confirmation] = user_params[:password_confirmation],
-    session[:last_name] = user_params[:last_name],
-    session[:first_name] = user_params[:first_name],
-    session[:last_name_kana] = user_params[:last_name_kana],
-    session[:first_name_kana] = user_params[:first_name_kana],
-    session[:birthdate_year] = user_params[:birthdate_year],
-    session[:birthdate_month] = user_params[:birthdate_month],
-    session[:birthdate_day] = user_params[:birthdate_day]
-    redirect_to step2_signup_index_path
+    # session[:profile] = user_params[:profile],
+    @user = User.new(user_params)
+    if @user.valid?
+      session[:userparams] = user_params
+      # session[:nickname] = user_params[:nickname],
+      # session[:email] = user_params[:email],
+      # session[:password] = user_params[:password],
+      # session[:password_confirmation] = user_params[:password_confirmation],
+      # session[:last_name] = user_params[:last_name],
+      # session[:first_name] = user_params[:first_name],
+      # session[:last_name_kana] = user_params[:last_name_kana],
+      # session[:first_name_kana] = user_params[:first_name_kana],
+      # session[:birthdate_year] = user_params[:birthdate_year],
+      # session[:birthdate_month] = user_params[:birthdate_month],
+      # session[:birthdate_day] = user_params[:birthdate_day]
+      redirect_to step2_signup_index_path
+    else
+      redirect_to root_path
+    end
   end
   
   def step2
@@ -48,18 +54,18 @@ class SignupController < ApplicationController
       redirect_to action: "step4"
     else
       @user=User.new(
-        nickname: session[:nickname],
-        email: session[:email],
-        password: session[:password],
-        password_confirmation: session[:password_confirmation],
-        last_name: session[:last_name],
-        first_name: session[:first_name],
-        last_name_kana: session[:last_name_kana],
-        first_name_kana: session[:first_name_kana],
-        birthdate_year: session[:birthdate_year],
-        birthdate_month: session[:birthdate_month],
-        birthdate_day: session[:birthdate_day],
-        phone_number: session[:phone_number]
+        nickname: session[:userparams]["nickname"],
+        email: session[:userparams]["email"],
+        password: session[:userparams]["password"],
+        password_confirmation: session[:userparams]["password_confirmation"],
+        last_name: session[:userparams]["last_name"],
+        first_name: session[:userparams]["first_name"],
+        last_name_kana: session[:userparams]["last_name_kana"],
+        first_name_kana: session[:userparams]["first_name_kana"],
+        birthdate_year: session[:userparams]["birthdate_year"],
+        birthdate_month: session[:userparams]["birthdate_month"],
+        birthdate_day: session[:userparams]["birthdate_day"],
+        phone_number: session[:userparams]["phone_number"]
       )
 
       @user.save!
