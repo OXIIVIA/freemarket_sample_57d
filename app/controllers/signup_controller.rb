@@ -29,8 +29,13 @@ class SignupController < ApplicationController
   end
 
   def step3_create
+    @address = Address.new(address_params)
     session[:address_params] = address_params
-    redirect_to step4_signup_index_path
+    if @address.valid?
+      redirect_to step4_signup_index_path
+    else
+      render :step3
+    end
   end
 
   def step4
@@ -90,7 +95,9 @@ class SignupController < ApplicationController
   def user_params
     params.require(:user).permit(
       :nickname, 
-      :email, 
+      :email,
+      :image,
+      :profile, 
       :password, 
       :password_confirmation, 
       :last_name, 

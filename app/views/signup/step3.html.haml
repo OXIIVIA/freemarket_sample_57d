@@ -33,6 +33,10 @@
             .field-input
             = f.text_field :address_last_name, placeholder: '例) 山田', class: "input-default",type:"text"
             = f.text_field :address_first_name, placeholder: '例) 彩', class: "input-default",type:"text"
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_last_name)
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_first_name)
           .registration-form__content__group
             %label{for: "name"}
               お名前カナ(全角)

@@ -9,6 +9,7 @@ ja:
         updated_at: 更新日時
         email: メールアドレス
         password: パスワード
+        password_confirmation: パスワード(確認)
         nickname: ニックネーム
         last_name: 名字
         first_name: 名前
@@ -17,3 +18,4 @@ ja:
         birthdate_year: 誕生年
         birthdate_month: 誕生月
         birthdate_day: 誕生日
+        phone_number: 電話番号
