@@ -45,6 +45,10 @@
             .field-input
             = f.text_field :address_last_name_kana, placeholder: '例) ヤマダ', class: "input-default",type:"text"
             = f.text_field :address_first_name_kana, placeholder: '例) アヤ', class: "input-default",type:"text"
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_last_name_kana)
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_first_name_kana)
           .registration-form__content__group
             %label{for: "address_number"}
               郵便番号

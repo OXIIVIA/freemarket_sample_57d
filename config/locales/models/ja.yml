@@ -19,3 +19,8 @@ ja:
         birthdate_month: 誕生月
         birthdate_day: 誕生日
         phone_number: 電話番号
+      address:
+        address_last_name: お名前（名字）
+        address_first_name: お名前（名前）
+        address_last_name_kana: 名字(カナ)
+        address_first_name_kana: 名前(カナ)

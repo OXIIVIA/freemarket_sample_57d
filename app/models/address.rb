@@ -7,9 +7,13 @@ class Address < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :address_last_name, presence: true
   validates :address_first_name, presence: true
-  validates :address_last_name_kana, presence: true
-  validates :address_first_name_kana, presence: true
-  # validates :birthdate_year, presence: true
-  # validates :birthdate_month, presence: true
-  # validates :birthdate_day, presence: true
+  validates :address_last_name_kana, presence: true, format: {
+    with: /\A[\p{katakana}ー－]+\z/,
+    message: "はカナ文字を入力してください" 
+  }
+  validates :address_first_name_kana, presence: true, format: {
+    with: /\A[\p{katakana}ー－]+\z/,
+    message: "はカナ文字を入力してください" 
+  }
+  
 end
