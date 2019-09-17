@@ -1,0 +1,10 @@
+.product_select-details
+  .product_select-group
+    .product_header
+      カテゴリー
+    .product_require
+      必須
+  .product_category-select
+    = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+    %i.fa.fa-chevron-down
+  .product_select-children

@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/cardselect' => 'users#cardselect'
   get '/logout', to: 'users#logout', as: "logout"
   get '/login', to: 'users#login', as: "login"
+  get 'sell/get_category_children' => 'items#get_category_children', defaults: { format: 'json' }
+  get 'sell/get_category_grandchildren' => 'items#get_category_grandchildren', defaults: { format: 'json' }
   resources :signup do
     collection do
       get 'step1'
@@ -29,5 +31,13 @@ Rails.application.routes.draw do
       get 'step5'
     end
   end
-  get '/sell' => 'items#sell'
+
+
+   get '/sell' => 'items#sell' 
+  #   collection do
+  #    get 'get_category_children',     defaults: { format: 'json' }
+  #    get 'get_category_grandchildren',defaults: { format: 'json' }
+  #   end
+  # end
+  
 end
