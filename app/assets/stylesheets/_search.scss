@@ -341,33 +341,11 @@
                 border-top: 65px solid transparent;
                 bottom: 255px;
                 box-sizing: border-box;
-                height: 65px;
-                margin-bottom: -130px;
-                position: relative;
-                right: 65px;
-                transform: rotate(-45deg);
-                width: 65px;
-                &__text {
-                  color: #fff;
-                  font-size: 23px;
-                  position: relative;
-                  right: 32px;
-                  top: 35px;
-                  z-index: 10;
-                }
-              }
-              &__sold{
-                border-bottom: 50px solid #ea352d;
-                border-left: 50px solid transparent;
-                border-right: 50px solid transparent;
-                border-top: 50px solid transparent;
-                bottom: 255px;
-                box-sizing: border-box;
                 height: 50px;
                 margin-bottom: -130px;
                 position: relative;
-                top: -204px;
-                right: 50px;
+                top: -217px;
+                right: 65px;
                 transform: rotate(-45deg);
                 width: 50px;
                 &__text {
@@ -376,7 +354,7 @@
                   font-weight: bold;
                   position: relative;
                   right: 28px;
-                  top: 22px;
+                  top: 28px;
                   z-index: 10;
                 }
               }
