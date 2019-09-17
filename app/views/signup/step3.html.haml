@@ -24,9 +24,6 @@
     %section.smain__container
       %h2.smain__container__header 発送元・お届け先住所入力
       = form_for @address, url: step3_create_signup_index_path, method: :post,controler: "signup", action: "step3_create" do |f|
-
-        = f.hidden_field :prefecture_id,value: ""
-        = f.hidden_field :city,value: ""
         .registration-form__content
           .registration-form__content__group
             %label{for: "name"}
@@ -36,6 +33,10 @@
             .field-input
             = f.text_field :address_last_name, placeholder: '例) 山田', class: "input-default",type:"text"
             = f.text_field :address_first_name, placeholder: '例) 彩', class: "input-default",type:"text"
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_last_name)
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_first_name)
           .registration-form__content__group
             %label{for: "name"}
               お名前カナ(全角)
@@ -44,13 +45,19 @@
             .field-input
             = f.text_field :address_last_name_kana, placeholder: '例) ヤマダ', class: "input-default",type:"text"
             = f.text_field :address_first_name_kana, placeholder: '例) アヤ', class: "input-default",type:"text"
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_last_name_kana)
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_first_name_kana)
           .registration-form__content__group
             %label{for: "address_number"}
               郵便番号
             %span.registration-form__content__group__require
               必須
             .field-input
-            = f.text_field :address_number, class:'input-default', placeholder:'例) 1234567',maxlength:'8'
+            = f.text_field :address_number, class:'input-default', placeholder:'例) 1234567'
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_number)
           .registration-form__content__group
             %label{for: "prefecture"}
               都道府県
@@ -58,8 +65,10 @@
               必須
             .prefecture
               .prefecture__select
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'input'
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: "prefecture__select__default"}
                 %i.fas.fa-angle-down
+                = render 'error_messages',
+                  errors: @address.errors.full_messages_for(:prefecture_id)
           .registration-form__content__group
             %label{for: "postnumber"}
               市区町村
@@ -67,6 +76,8 @@
               必須
             .field-input
             = f.text_field :address_city, class:'input-default', placeholder:'例)横浜市緑区'
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_city)
           .registration-form__content__group
             %label{for: "postnumber"}
               番地
@@ -74,6 +85,8 @@
               必須
             .field-input
             = f.text_field :address_block, class:'input-default', placeholder:'例)青山1-1-1'
+            = render 'error_messages',
+              errors: @address.errors.full_messages_for(:address_block)
           .registration-form__content__group
             %label{for: "postnumber"}
               建物名
