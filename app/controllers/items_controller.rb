@@ -84,6 +84,7 @@ class ItemsController < ApplicationController
     @items = @q.result(distinct: true)
   end
 
+
   
   private
   
