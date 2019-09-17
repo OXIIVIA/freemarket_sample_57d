@@ -6,20 +6,24 @@ class User < ApplicationRecord
   has_one  :card
   has_many :favorites
 
-  # VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
-  # VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
-
   validates :nickname, presence: true
   validates :email, presence: true
   validates :password, presence: true
   validates :last_name, presence: true
   validates :first_name, presence: true
-  validates :last_name_kana, presence: true
-  validates :first_name_kana, presence: true
+  validates :last_name_kana, presence: true,
+  format: {
+    with: /\A[\p{katakana}ー－]+\z/,
+    message: "はカナ文字を入力してください" 
+  }
+  validates :first_name_kana, presence: true,
+  format: {
+    with: /\A[\p{katakana}ー－]+\z/,
+    message: "はカナ文字を入力してください" 
+  }
   validates :birthdate_year, presence: true
   validates :birthdate_month, presence: true
   validates :birthdate_day, presence: true
-  # validates :phone_number, presence: true
   
   def self.find_for_oauth(auth)
     sns = SnsCredential.where(uid: auth.uid, provider: auth.provider).first
