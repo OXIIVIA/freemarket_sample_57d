@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   before_action :set_search
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_product, only: [:show, :edit, :update, :purchase, :pay]
+  before_action :set_product, only: [:show, :edit, :update, :purchase, :pay, :complete]
   before_action :set_seler, only: :show 
   before_action :set_payjp_api, only: [:purchase, :pay]
   before_action :access_check, only: [:edit, :update]
@@ -82,6 +82,9 @@ class ItemsController < ApplicationController
   def search
     @q = Item.ransack(search_params)
     @items = @q.result(distinct: true)
+  end
+
+  def complete
   end
 
   

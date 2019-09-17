@@ -7,7 +7,10 @@
       .container__right__search-item__results__box
         =link_to item_path(item.id),method: :get do
           .container__right__search-item__results__box__image-box
-            = image_tag item.image.url, alt: "画像1", class: "owl-lazy"
+            = image_tag item.image.url, alt: "画像1", class: "owl-lazy" 
+            - if item.buyer_id != nil           
+              .container__right__search-item__results__box__image-box__sold
+                .container__right__search-item__results__box__image-box__sold__text SOLD
             .container__right__search-item__results__box__image-box__name-box
               = item.name
             .container__right__search-item__results__box__image-box__price
