@@ -47,15 +47,16 @@
           .sell--content2
             %h3.sell--content2__head 商品の詳細
             .sell--content2__form1
-              .sell--content2__form1__group1
+              .sell--content2__form1__group1#select-wrap-category
                 %label.sell--content2__form1__group1__label
                   カテゴリー
                   %span.form--require 必須
                 %div
-                  .product_category-select
-                    = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
-                    %i.fa.fa-chevron-down
-                  .product_select-children
+                  .product_category-select.select--wrap
+                    = f.collection_select :category_id, @category_parent_array, :id, :name, { prompt: "---" }, { class: "category_select-box select--wrap__category", id: "parent_category" }
+                    .fa-down-icon
+                      %i.fa.fa-chevron-down
+                  -# .product_select-children
 
               .sell--content2__form2__group2
                 %label.sell--content2__form2__group2__label
