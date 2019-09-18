@@ -19,12 +19,14 @@ class Item < ApplicationRecord
   validates :price,numericality: { only_integer: true,greater_than: 299, less_than: 10000000}
   validates :image, presence: true
 
+  scope :item_order, -> { Item.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id)}
+
   def previous
-    Item.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
+    item_order.first
   end
 
   def next
-    Item.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
+    item_order.reverse.first
   end 
 
   extend ActiveHash::Associations::ActiveRecordExtensions
