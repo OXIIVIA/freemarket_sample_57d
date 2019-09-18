@@ -52,12 +52,10 @@
                   カテゴリー
                   %span.form--require 必須
                 %div
-                  .select--wrap
-                    =f.select :category_id, [["レディース", "レディース"], ["メンズ", "メンズ"],["ベビー・キッズ", "ベビー・キッズ"], ["インテリア・住まい・小物", "インテリア・住まい・小物"],["本・音楽・ゲーム", "本・音楽・ゲーム"], ["おもちゃ・ホビー・グッズ", "おもちゃ・ホビー・グッズ"], ["コスメ・香水・美容", "コスメ・香水・美容"], ["家電・スマホ・カメラ", "家電・スマホ・カメラ"], ["スポーツ・レジャー", "スポーツ・レジャー"], ["ハンドメイド", "ハンドメイド"], ["チケット", "チケット"], ["自動車・オートバイ", "自動車・オートバイ"], ["その他", "その他"]],{prompt: "---"}, class:"select--wrap__category"
-                    = render 'items/error_messages',
-                      errors: @item.errors.full_messages_for(:category_id)
-                    .fa-down-icon
-                      %i.fa.fa-chevron-down
+                  .product_category-select
+                    = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+                    %i.fa.fa-chevron-down
+                  .product_select-children
 
               .sell--content2__form2__group2
                 %label.sell--content2__form2__group2__label

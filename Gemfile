@@ -90,6 +90,7 @@ gem "omniauth-rails_csrf_protection"
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "gretel"
+gem 'ancestry'
 gem 'squasher', '>= 0.6.0'
 gem 'ransack'
 gem 'rails-i18n', '~> 5.1'

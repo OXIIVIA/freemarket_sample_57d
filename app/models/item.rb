@@ -3,7 +3,7 @@ class Item < ApplicationRecord
 
   has_one :delivery
   has_many :favorites
-  has_many :categories, through: :item_categories
+  belongs_to :category, optional: true
   belongs_to :group, optional: true
   belongs_to :brand, optional: true
   belongs_to :saler, class_name: "User"
@@ -19,8 +19,16 @@ class Item < ApplicationRecord
   validates :price,numericality: { only_integer: true,greater_than: 299, less_than: 10000000}
   validates :image, presence: true
 
+  scope :item_order, -> { Item.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id)}
+
+  def previous
+    item_order.first
+  end
+
+  def next
+    item_order.reverse.first
+  end 
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
-  
 end

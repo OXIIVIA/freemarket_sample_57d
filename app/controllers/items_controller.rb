@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
   before_action :set_seler, only: :show 
   before_action :set_payjp_api, only: [:purchase, :pay]
   before_action :access_check, only: [:edit, :update]
+  before_action :set_item,          only: [:show, :edit, :update]
+  before_action :set_item_form_collction_select, only: [:new, :edit]
 
   def index
     @q = Item.ransack(params[:q])
@@ -14,6 +16,18 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @saler_items = Item.where(saler_id: @item.saler_id).limit(6).order('created_at DESC')
+    @same_category_items = Item.where(category_id: @item.category_id).limit(6).order('created_at DESC')
+  end
+
+  def create
+    @item = Item.new(item_params)
+    @parents = Category.where(ancestry: nil)
+    if @item.save
+      redirect_to root_path
+    else
+      render action: :new
+    end
   end
 
   def new
@@ -85,7 +99,6 @@ class ItemsController < ApplicationController
   end
 
 
-  
   private
   
   def item_params
@@ -134,6 +147,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def get_category_children
+    @category_children = Category.find(params[:parent_id]).children
+  end
+
+  def  get_category_grandchildren
+    @category_grandchildren = Category.find(params[:child_id]).children
+  end
+
+  def set_item_form_collction_select
+    @category_parent_array = Category.where(ancestry: nil)
+  end
 
 end
-
