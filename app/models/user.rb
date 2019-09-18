@@ -5,6 +5,25 @@ class User < ApplicationRecord
   has_one  :address
   has_one  :card
   has_many :favorites
+
+  validates :nickname, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name_kana, presence: true,
+  format: {
+    with: /\A[\p{katakana}ー－]+\z/,
+    message: "はカナ文字を入力してください" 
+  }
+  validates :first_name_kana, presence: true,
+  format: {
+    with: /\A[\p{katakana}ー－]+\z/,
+    message: "はカナ文字を入力してください" 
+  }
+  validates :birthdate_year, presence: true
+  validates :birthdate_month, presence: true
+  validates :birthdate_day, presence: true
   
   def self.find_for_oauth(auth)
     sns = SnsCredential.where(uid: auth.uid, provider: auth.provider).first

@@ -7,7 +7,7 @@
     .login-no-account
       %p アカウントをお持ちでない方はこちら
       .sign-up
-        =link_to "", class: "sign-up-btn" do
+        =link_to signup_path, class: "sign-up-btn" do
           新規会員登録 
     .single-main__container__inner__content   
       =link_to user_facebook_omniauth_authorize_path, method: :post, class: "contents__btn contents__btn__facebook" do
@@ -25,7 +25,6 @@
           = f.password_field :password, placeholder: "パスワード", class: "login-input-text input-default"
         .form-group
           = recaptcha_tags
-          -# =image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx8VuXwJ4gPhLFG2-E0OHHmPTbuj8QHJFQ6rGm5pA7Kz17PvFM"
         = f.submit "ログイン", class: "login"
         =link_to "", class: "password-forget" do
           パスワードをお忘れの方

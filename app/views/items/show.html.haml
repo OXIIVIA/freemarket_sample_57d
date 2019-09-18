@@ -1,71 +1,58 @@
 .wrapper
   = render partial:"shared/header"
+
 .itemcontainer
   .itemcontainer__box
     .itemcontainer__box__content
       .itemcontainer__box__content__detail
         %h2.item-name
-          正規品 HUBLOT クラシックフュージョン クロノグラフ
-        %p.item-sumarry 『正規品 HUBLOT クラシックフュージョン クロノグラフ』は、11回の取引実績を持つTakeさんから出品されました。ウブロ（腕時計(アナログ)/メンズ）の商品で、京都府から1~2日で発送されます。
+          = @item.name
+        %p.item-sumarry 
         .itemmain
           .itemmain__photo
             .itemmain__photo--main
-              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_1.jpg?1566975788"
+              = image_tag @item.image.url, class: "itemmain__photo--main"
             .itemmain__photo--main__clearfix
               .itemmain__photo--sub
-                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_2.jpg?1566975788"
-                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_3.jpg?1566975788"
-                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_9.jpg?1567054871"
-                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_7.jpg?1567054871"
-                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m96341556325_1.jpg?1566975788"
           %table.item-profile
             %tbody
               %tr
                 %th
                   出品者
                 %td
+                  = @user.nickname
               %tr
                 %th
                   カテゴリー
                 %td
-                  時計
+                  = @item.category_id
               %tr
                 %th
                   商品の状態
                 %td
-                  新品に近い
+                  = @item.condition
               %tr
                 %th
                   配送元地域
                 %td
-                  大阪
+                  = @item.prefecture.name
               %tr
                 %th
                   配送の目安
                 %td
-                  1日
-              %tr
-                %th
-                  公開範囲
-                %td
+                  = @item.deliver_date
           .item-price
             %span.item-price__bold
-              ¥650,000
+              = "¥#{@item.price.to_s(:delimited)}"
             %span.item-price__tax
               (税込)
             %span.item-price__shipping
-              送料込み
-          .buy-buttn
-            購入画面に進む
+              = @item.postage
+            .buy-buttn
+              = link_to "購入画面に進む", purchase_items_path(@item)
           .item-description
             %p  
-              HUBLOT クラシックフュージョン チタニウム クロノグラフです 521.nx. 1171.lr 正規品
-              %br
-              少しだけ、傷がありますが、全然気にはならいないと思いますが 神経質な方はご遠慮ください。
-              %br
-              売れなければ自分で使用しようと思っています！
-              %br
-              偽物とのすり替え対策で返品はおこなってませんのでよろしくお願い申し上げます。
+              = @item.description
           .item-reputation
             .item-reputation__left
               %button.item-reputation__left--like
@@ -80,6 +67,15 @@
               .item-reputation__right--safety
                 =fa_icon "unlock-alt"
                 = link_to "安心・安全への取り組み", "", class: "item-reputation__right--safety--span"
+            
+      .listing-item-change-box
+        = link_to "商品の編集", edit_item_path(@item), class: "btn-default btn-red"
+        %p.text-center 
+        .item-btn-float-area
+          .btn-default.btn-gray 出品を一旦停止する
+        .item-btn-float-area2
+          = link_to "この出品を削除する",  item_path(@item), method: :delete,class: "btn-default btn-gray2", data: { confirm: '削除しますか？' }
+
       .item-comment-container
         %ul.item-comment-container__list
           = render partial: 'comment'

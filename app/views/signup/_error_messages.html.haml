@@ -1,0 +1,5 @@
+%ul.has-error-text
+  - if errors.any?
+    - errors.each do |message|
+      %li
+        = message
