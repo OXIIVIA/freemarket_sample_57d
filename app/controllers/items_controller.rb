@@ -159,46 +159,4 @@ class ItemsController < ApplicationController
     @category_parent_array = Category.where(ancestry: nil)
   end
 
-
-  # def sell
-  #   @category = Category.all.order("id ASC").limit(13)
-  # end   
-
-  # def search
-  #   respond_to do |format|
-  #     format.html
-  #     format.json do
-  #       @children = Category.find(params[:parent_id]).children
-  #   #    #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
-  #     end
-  #   end
-  # end
-
-  # 以下全て、formatはjsonのみ
-   # 親カテゴリーが選択された後に動くアクション
-  
-
- # 子カテゴリーが選択された後に動くアクション
- 
-
-#  private
-#   def set_item
-#     @item = Item.find(params[:id])
-#   end
-
-  # def item_params
-  #   params.require(:item).permit(:name, :text, :category_id, :condition_id, :region_id, :postage_id, :delivery_day_id, :delivery_way_id, :brand_id, :price, images_attributes: [:id, :image] ).merge(saler_id: current_user.id, size_id: 1)
-  # end
-
-  # 出品フォームの選択肢をセット
-  # def set_item_form_collction_select
-  #   @category_parent_array = Category.where(ancestry: nil)
-  #   # @brand                 = Brand.all
-  #   # @condition             = Condition.all
-  #   # @postage               = Postage.all
-  #   # @region                = Region.all
-  #   # @delivery_day          = DeliveryDay.all
-  #   # @delivery_way          = DeliveryWay.all
-  # end
-
 end
