@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       get 'purchase/:id', to: 'items#purchase', as: 'purchase'
       post 'pay/:id', to: 'items#pay', as: 'pay'
       get '/search', to: 'items#search', as: 'search'
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
 
@@ -21,9 +23,6 @@ Rails.application.routes.draw do
   get '/cardselect' => 'users#cardselect'
   get '/logout', to: 'users#logout', as: "logout"
   get '/login', to: 'users#login', as: "login"
-  get '/sell' => 'items#sell' 
-  get 'sell/get_category_children' => 'items#get_category_children', defaults: { format: 'json' }
-  get 'sell/get_category_grandchildren' => 'items#get_category_grandchildren', defaults: { format: 'json' }
 
   resources :signup do
     collection do

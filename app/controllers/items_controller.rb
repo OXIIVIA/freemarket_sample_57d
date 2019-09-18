@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   before_action :set_seler, only: :show 
   before_action :set_payjp_api, only: [:purchase, :pay]
   before_action :access_check, only: [:edit, :update]
-  before_action :set_item,          only: [:show, :edit, :update]
   before_action :set_item_form_collction_select, only: [:new, :edit]
 
   def index
@@ -98,6 +97,17 @@ class ItemsController < ApplicationController
     @items = @q.result(distinct: true)
   end
 
+  def get_category_children
+    @category_children = Category.find(params[:parent_id]).children
+  end
+
+  def  get_category_grandchildren
+    @category_grandchildren = Category.find(params[:child_id]).children
+  end
+
+  def set_item_form_collction_select
+    @category_parent_array = Category.where(ancestry: nil)
+  end
 
   private
   
@@ -145,18 +155,6 @@ class ItemsController < ApplicationController
     if @item.saler_id != current_user.id
       redirect_to root_path
     end
-  end
-
-  def get_category_children
-    @category_children = Category.find(params[:parent_id]).children
-  end
-
-  def  get_category_grandchildren
-    @category_grandchildren = Category.find(params[:child_id]).children
-  end
-
-  def set_item_form_collction_select
-    @category_parent_array = Category.where(ancestry: nil)
   end
 
 end
