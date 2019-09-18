@@ -1,6 +1,6 @@
 class CreateItems < ActiveRecord::Migration[5.2]
   def change
-    create_table :items do |t|
+    create_table :iitems do |t|
       t.string       :name 
       t.integer      :price, null: false
       t.string       :size 
@@ -16,7 +16,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer      :brand_id ,foreign_key: true
       t.integer      :category_id ,foreign_key: true
       t.text         :detail
-
       t.timestamps
     end
   end

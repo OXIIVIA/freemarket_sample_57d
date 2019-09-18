@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_074807) do
+ActiveRecord::Schema.define(version: 2019_09_18_090400) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -67,23 +67,21 @@ ActiveRecord::Schema.define(version: 2019_09_12_074807) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.integer "price", null: false
-    t.string "size"
-    t.string "image"
-    t.string "situation", null: false
-    t.string "status", null: false
-    t.string "pay_way"
-    t.string "deliver_way"
-    t.string "deliver_date"
-    t.string "deliver_fee"
-    t.integer "saler_id"
-    t.integer "buyer_id"
-    t.integer "brand_id"
-    t.integer "category_id"
-    t.text "detail"
+    t.integer "saler_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.integer "brand_id"
+    t.string "size"
+    t.integer "buyer_id"
+    t.text "image"
+    t.text "postage"
+    t.text "category_id"
+    t.text "condition"
+    t.text "deliver_date"
+    t.string "prefecture_id"
   end
 
   create_table "personals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -122,8 +120,6 @@ ActiveRecord::Schema.define(version: 2019_09_12_074807) do
     t.integer "birthdate_month", null: false
     t.integer "birthdate_day", null: false
     t.string "phone_number", null: false
-    t.string "provider"
-    t.string "uid"
     t.string "image"
     t.string "provider"
     t.string "uid"
