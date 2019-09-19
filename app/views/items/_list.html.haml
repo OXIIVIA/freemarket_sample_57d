@@ -1,14 +1,60 @@
-.items-container 
-  -@items.each do |item|
-    = link_to item_path(item), class: "item-box" do
-      = image_tag("#{item.image.url}", width: '213',  height: '220', alt: "個別アイテム", class: "item-box__link")
-      
-      .item-box__text
-        %h3.item-box__text__name 
-          = item.name
-        .item-box__text__number-box
-          %p.item-box__text__number-box__price 
-            = "¥ #{item.price}"
-          .item-box__text__number-box__like-box
-            = fa_icon "heart"
-            %span 10
+.pickup-box__new-items
+  = link_to "レディース 新着アイテム", root_path, class: "pickup-box__new-items__title" 
+  .items-container 
+    -@ladies.each do |item|
+      = link_to item_path(item), class: "item-box" do
+        = image_tag("#{item.image.url}", width: '213',  height: '220', alt: "個別アイテム", class: "item-box__link")
+        .item-box__text
+          %h3.item-box__text__name 
+            = item.name
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price 
+              = "¥ #{item.price}"
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+.pickup-box__new-items
+  = link_to "メンズ 新着アイテム", root_path, class: "pickup-box__new-items__title" 
+  .items-container 
+    -@mens.each do |item|
+      = link_to item_path(item), class: "item-box" do
+        = image_tag("#{item.image.url}", width: '213',  height: '220', alt: "個別アイテム", class: "item-box__link")
+        .item-box__text
+          %h3.item-box__text__name 
+            = item.name
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price 
+              = "¥ #{item.price}"
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+.pickup-box__new-items
+  = link_to "ベビー・キッズ 新着アイテム", root_path, class: "pickup-box__new-items__title" 
+  .items-container 
+    -@babies.each do |item|
+      = link_to item_path(item), class: "item-box" do
+        = image_tag("#{item.image.url}", width: '213',  height: '220', alt: "個別アイテム", class: "item-box__link")
+        .item-box__text
+          %h3.item-box__text__name 
+            = item.name
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price 
+              = "¥ #{item.price}"
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10
+.pickup-box__new-items
+  = link_to "インテリア・住まい・小物 新着アイテム", root_path, class: "pickup-box__new-items__title" 
+  .items-container 
+    -@home.each do |item|
+      = link_to item_path(item), class: "item-box" do
+        = image_tag("#{item.image.url}", width: '213',  height: '220', alt: "個別アイテム", class: "item-box__link")
+        .item-box__text
+          %h3.item-box__text__name 
+            = item.name
+          .item-box__text__number-box
+            %p.item-box__text__number-box__price 
+              = "¥ #{item.price}"
+            .item-box__text__number-box__like-box
+              = fa_icon "heart"
+              %span 10

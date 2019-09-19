@@ -11,7 +11,10 @@ class ItemsController < ApplicationController
   def index
     @q = Item.ransack(params[:q])
     @items = @q.result(distinct: true)
-    @items =Item.order("created_at DESC").limit(4)
+    @ladies =Item.where(category_id: 1).order("created_at DESC").limit(8)
+    @mens =Item.where(category_id: 2).order("created_at DESC").limit(8)
+    @babies =Item.where(category_id: 3).order("created_at DESC").limit(8)
+    @home =Item.where(category_id: 4).order("created_at DESC").limit(8)
   end
 
   def show
